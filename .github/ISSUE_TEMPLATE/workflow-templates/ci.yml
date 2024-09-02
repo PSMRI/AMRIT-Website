@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    uses: PSMRI/.github/.github/workflow-templates/eslint.yml@main
+
+  audit:
+    uses: PSMRI/.github/.github/workflow-templates/npm-audit.yml@main

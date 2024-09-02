@@ -1,0 +1,13 @@
+{
+    "name": "ESLint Check",
+    "description": "This template runs ESLint to check for linting errors in the project.",
+    "iconName": "octicon-lint",
+    "categories": [
+        "JavaScript",
+        "TypeScript"
+    ],
+    "filePatterns": [
+        "src/**/*.js",
+        "src/**/*.ts"
+    ]
+}

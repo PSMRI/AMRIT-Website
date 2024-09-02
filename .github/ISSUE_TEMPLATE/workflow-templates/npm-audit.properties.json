@@ -1,0 +1,13 @@
+{
+    "name": "NPM Audit",
+    "description": "This template runs npm audit to check for vulnerabilities in dependencies.",
+    "iconName": "octicon-security",
+    "categories": [
+        "Security",
+        "JavaScript"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "package-lock.json$"
+    ]
+}
