@@ -1,0 +1,40 @@
+---
+import FeatureBanner from "@/components/features/FeatureBanner.astro";
+import ProjecManagement from "@/components/features/ProjecManagement.astro";
+import Shape from "@/components/Shape.astro";
+import Base from "@/layouts/Base.astro";
+import Cta from "@/layouts/partials/Cta.astro";
+import { getEntryBySlug } from "astro:content";
+import Service from "../../layouts/components/Service.astro";
+import ContentComparisonSlider from "@/layouts/function-components/ContentComparisonSlider"
+
+const programs = await getEntryBySlug("programs", "index");
+---
+
+<Base
+  title={programs.data.title}
+  meta_title={programs.data.meta_title}
+  description={programs.data.description}
+  image={programs.data.image}
+>
+
+  <!--Here we adress the Problem Statement-->
+  <!--<FeatureBanner features={programs.data} />-->
+  <div class="flex items-center justify-center w-full mb-24 mt-10" draggable="false" ondragstart="return false;">
+  <ContentComparisonSlider client:only="react"/>
+  </div>
+  <!-- Catchy Title Component -->
+  <div class="flex justify-center items-center py-12">
+    <h2 class="text-3xl md:text-5xl font-bold text-center">
+      Our <span class="text-[#FF7847]">People</span> needed it, so we <span class="text-[#FF7847]">Solved</span> it <br />
+      with <br /> <span class="text-[#FF7847]">Our Programs</span>!
+    </h2>
+  </div>
+
+  <!--Here we address the solutions-->
+  <Service service={programs.data.service} />
+  <!--<Shape />-->
+  <!--<FeatureBanner features={features.data} />-->
+  <!--<ProjecManagement features={features.data} />-->
+  <!--<Cta />-->
+</Base>
