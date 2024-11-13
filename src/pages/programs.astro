@@ -46,40 +46,34 @@ const page_data = {
     <MapSvg />
   </div>
 
-  <Base>
-    <div id="details-box" class="hidden"></div>
+  <script>
+    var tooltipSpan = document.getElementById("details-box");
 
-    <MapSvg />
-
-    <script>
-      var tooltipSpan = document.getElementById("details-box");
-
-      document.addEventListener("mouseover", function (e) {
-        const target = e.target as HTMLElement | null;
-        if (target && target.tagName === "path") {
-          const content = (target.dataset as DOMStringMap).name;
-          const detailsBox = document.getElementById("details-box");
-          if (detailsBox) {
-            detailsBox.innerHTML = content || "";
-            detailsBox.style.opacity = "100%";
-          }
-        } else {
-          const detailsBox = document.getElementById("details-box");
-          if (detailsBox) {
-            detailsBox.style.opacity = "0%";
-          }
+    document.addEventListener("mouseover", function (e) {
+      const target = e.target as HTMLElement | null;
+      if (target && target.tagName === "path") {
+        const content = (target.dataset as DOMStringMap).name;
+        const detailsBox = document.getElementById("details-box");
+        if (detailsBox) {
+          detailsBox.innerHTML = content || "";
+          detailsBox.style.opacity = "100%";
         }
-      });
-
-      window.onmousemove = function (e) {
-        var x = e.clientX,
-          y = e.clientY;
-        if (tooltipSpan) {
-          tooltipSpan.style.display = "block";
-          tooltipSpan.style.top = y + 20 + "px";
-          tooltipSpan.style.left = x + "px";
+      } else {
+        const detailsBox = document.getElementById("details-box");
+        if (detailsBox) {
+          detailsBox.style.opacity = "0%";
         }
-      };
-    </script>
-  </Base>
+      }
+    });
+
+    window.onmousemove = function (e) {
+      var x = e.clientX,
+        y = e.clientY;
+      if (tooltipSpan) {
+        tooltipSpan.style.display = "block";
+        tooltipSpan.style.top = y + 20 + "px";
+        tooltipSpan.style.left = x + "px";
+      }
+    };
+  </script>
 </Base>
