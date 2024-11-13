@@ -1,0 +1,67 @@
+---
+title: Success Story – SARATHI 104 Helpline Empowered by AMRIT EHR:Transforming Access to Healthcare in Assam
+image: "/images/stories/Picture4.webp"
+img: [
+    "/images/stories/Picture5.webp",
+    "/images/stories/Picture6.webp"
+]
+
+---
+
+Assam, India's 15th most populous state, faces unique healthcare challenges, including a scarcity of community health centers, specialists, and the lengthy distances to reach the nearest facilities. Rugged terrain and hilly landscapes further complicate access to essential healthcare, leaving many rural populations underserved. Recognizing these needs, the SARATHI 104 Helpline was launched by Piramal Foundation in collaboration with the National Health Mission (NHM) and the Government of Assam. This toll-free, round-the-clock helpline is designed to offer immediate medical advice, health counseling, and essential health information in multiple languages, addressing an urgent need for accessible healthcare in Assam’s rural and semi-urban areas.
+
+<strong>
+<h2>The Role of AMRIT in SARATHI 104’s Impact</h2>
+</strong>
+
+SARATHI 104, a health information helpline integrated with AMRIT (Accessible Medical Records via Integrated Technologies), represents a groundbreaking step toward universal, quality healthcare access. 
+
+<ul>
+<li>AMRIT enables the SARATHI 104 team to create and maintain detailed patient records, facilitate seamless referrals, and provide accurate, real-time medical advice.</li>
+<li>AMRIT’s unique patient ID system allows individuals to receive continued healthcare, effectively bridging the gaps between initial consultation and follow-up care in the state’s public healthcare ecosystem. </li>
+<li>AMRIT’s ability to store and transfer electronic health data across healthcare facilities ensures that patients, even in remote areas, have their health history accessible at every point of care.</li>
+</ul>
+
+<h4>Comprehensive Health Services Offered</h4>
+
+Since its inception in 2010, SARATHI 104 has provided a diverse array of healthcare services to millions in Assam. Equipped with AMRIT’s integrated technology, the helpline’s core functions have evolved to include:
+
+<ul>
+<li><strong>Health Helpline Services:</strong> Offering medical advice using triage (categorizing cases as critical, serious, or stable) and telemedicine support.</li>
+<li><strong>Mental Health Counseling:</strong> Supporting issues related to chronic diseases, stress, HIV/AIDS, and even suicide prevention.</li>
+<li>
+<strong>Grievance Redressal:</strong> Allowing users to lodge complaints against public healthcare services, tracked through a dedicated portal.
+</li>
+<li>
+<strong>Maternal and Early Childhood Support:</strong> Acting as the first responder for maternal deaths through the SUMAN (Surakshit Matritva Aashwashan)  initiative and monitoring early childhood development.
+</li>
+<li>
+<strong>Follow-Up Care for Non-Communicable Diseases (NCDs): </strong> Ensuring consistent follow-up care for chronic illnesses.
+</li>
+<li><strong>Language-Specific Routing</strong>Enabling patients to comfortably discuss their concerns in Assamese, Hindi, Bodo, and other local languages, including languages spoken in tea garden communities.</li>
+</ul>
+
+Since launch, the helpline has received over 20 million inbound calls and made more than 4.3 million outbound calls, with AMRIT enhancing each interaction by centralizing patient data for a more informed and personalized care experience.
+
+<h4>Critical Support During the COVID-19 Pandemic</h4>
+
+During the COVID-19 pandemic, SARATHI 104, empowered by AMRIT, became the central communication platform for the Government of Assam’s pandemic response. The helpline managed both inbound calls for symptomatic reporting and outbound calls to track and monitor citizens in quarantine. AMRIT’s EHR system enabled the seamless sharing of health data with public health officials, aiding in rapid contact tracing and real-time reporting of positive cases.
+
+Key COVID-19 support activities included:
+<ul>
+<li>Handling over 12 lakh calls from citizens seeking information, testing, and screening support.</li>
+<li>Coordinating over 42,000 follow-up calls with passengers returning to Assam via train.</li>
+<li>Registering stranded citizens under the Assam Cares initiative, assisting with inter-district travel requests, and providing essential medicine delivery through the Dhanwantari scheme.</li>
+</ul>
+
+By integrating AMRIT’s EHR capabilities, the helpline facilitated accurate data transfer to the Integrated Disease Surveillance Program (IDSP), ensuring the timely and effective containment of the virus across Assam.
+
+<h4>Sustained Impact and Reach</h4>
+
+Today, SARATHI 104, powered by AMRIT, is a critical healthcare touchpoint for Assam’s underserved populations, offering essential services that are accessible, affordable, and available to all. This integrated call center has become a model of healthcare accessibility, significantly expanding the reach and depth of healthcare services for Assam’s rural populations and reducing the burden on the public health infrastructure.
+With AMRIT, SARATHI 104 has become more than a helpline—it is a lifeline for millions, setting a new standard in healthcare accessibility in India.
+
+<h4>Testimonials</h4>
+
+“With AMRIT - it's become easier since the data is in one place and is helpful because if the beneficiary has called earlier and has been registered their previous data will already show on the screen to the HAO.” (104 Ops Staff, Guwahati,2022)
+“Our work has become very easy (because of AMRIT), as it does not take much time to diagnose the beneficiary. Can tell quickly because of the algorithm (drop-down options for probing on the symptoms), can help those people. Earlier there was a problem in thinking and understanding, but now the algorithm has come, then we can give quick remedies to those people.” (HAO, Guwahati,2022)

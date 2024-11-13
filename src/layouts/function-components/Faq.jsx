@@ -2,7 +2,8 @@ import { marked } from "marked";
 import { useState } from "react";
 
 const Faq = ({ data }) => {
-  const [isActive, setIsActive] = useState([]);
+  const [isActive, setIsActive] = useState(data.approach.list.map((_, i) => i));
+
   const accordionHandler = (index) => {
     if (isActive.includes(index)) {
       setIsActive(isActive.filter((item) => item !== index));
@@ -29,10 +30,7 @@ const Faq = ({ data }) => {
                   onClick={() => accordionHandler(i)}
                   key={`item-${i}`}
                 >
-                  <div
-                    className="accordion-header relative pl-6 text-lg font-semibold text-dark"
-                    
-                  >
+                  <div className="accordion-header relative pl-6 text-lg font-semibold text-dark">
                     {item.title}
                     <svg
                       className="accordion-icon absolute left-0 top-[22px]"

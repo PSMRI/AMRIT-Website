@@ -6,6 +6,16 @@ import { getEntryBySlug } from "astro:content";
 import MapSvg from "@/components/programs/map-svg.astro";
 const pricing = await getEntryBySlug("pricing", "index");
 const program = await getEntryBySlug("programs", "index");
+import config from "@/config/config.json";
+const { success_stories } = config.settings;
+import type { TIndexData } from "@/types";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import SuccessStories from "@/components/SuccessStories.astro";
+const StoryIndex = (await getEntryBySlug<any, string>(
+  success_stories,
+  "-index",
+)) as TIndexData;
+const posts = await getSinglePage(success_stories);
 const page_data = {
   ...program.data,
   content: program.body,
@@ -23,6 +33,7 @@ const page_data = {
       <PageHeader page_data={page_data} />
       <p class="text-center">{program.data.subtitle}</p>
     </div>
+    <div class="container">
     <div
       class="key-feature-grid mt-10 grid grid-cols-1 m-5 gap-7 lg:grid-cols-2 place-items-center"
     >
@@ -37,6 +48,7 @@ const page_data = {
         })
       }
     </div>
+  </div>
   </section>
 
   <Faq client:load data={program.data} />
