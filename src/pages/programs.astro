@@ -6,19 +6,313 @@ import { getEntryBySlug } from "astro:content";
 import MapSvg from "@/components/programs/map-svg.astro";
 const pricing = await getEntryBySlug("pricing", "index");
 const program = await getEntryBySlug("programs", "index");
-import config from "@/config/config.json";
-const { success_stories } = config.settings;
-import type { TIndexData } from "@/types";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import SuccessStories from "@/components/SuccessStories.astro";
-const StoryIndex = (await getEntryBySlug<any, string>(
-  success_stories,
-  "-index",
-)) as TIndexData;
-const posts = await getSinglePage(success_stories);
 const page_data = {
   ...program.data,
   content: program.body,
+};
+
+const deploymentData = {
+  STFC: {
+    programName: "STFC Interventions",
+    description:
+      "To enhance the overall health of the trucker community, we aim to encourage health-seeking behaviour by educating truck drivers to consistently use medications for non-communicable diseases (NCDs) and utilise follow-up services from local primary health centres (PHCs) and health and wellness centres (H&WCs).",
+    states: [
+      "IN-MH",
+      "IN-GJ",
+      "IN-RJ",
+      "IN-MP",
+      "IN-UP",
+      "IN-BR",
+      "IN-WB",
+      "IN-TN",
+      "IN-KA",
+      "IN-AP",
+      "IN-TG",
+      "IN-OR",
+      "IN-DL",
+    ], // 13 states mentioned
+    stats: {
+      totalRecords: 295000,
+      uniqueBeneficiaries: 121000,
+      revisitBeneficiaries: 173000,
+      totalLabTests: 181000,
+      ncdScreeningCompleted: 72570,
+      numberOfMMUs: 14,
+      currentUsers: 20,
+    },
+  },
+  SehatOkPlease: {
+    programName: "Sehat Ok Please",
+    description:
+      "The social impact initiative of establishing mobile medical units in Maharashtra for non-communicable diseases (NCDs) screening and awareness.",
+    states: ["IN-MH"],
+    stats: {
+      totalRecords: 656000,
+      uniqueBeneficiaries: 385000,
+      revisitBeneficiaries: 271000,
+      totalLabTests: 616000,
+      ncdScreeningCompleted: 359000,
+      numberOfMMUs: 21,
+      currentUsers: 59,
+    },
+  },
+  PiramalArogyaSeva: {
+    programName: "Piramal Arogya Seva Digwal",
+    description:
+      "To provide quality primary health care services to underserved and unserved populations within a 10 km radius of the Piramal Enterprises factory.",
+    states: ["IN-TG"],
+    stats: {
+      totalRecords: 49130,
+      uniqueBeneficiaries: 16310,
+      revisitBeneficiaries: 32810,
+      totalLabTests: 15030,
+      ncdScreeningCompleted: 23190,
+      numberOfServiceLines: 2,
+      currentUsers: 3,
+    },
+  },
+  BPSCL: {
+    programName: "BPSCL",
+    description:
+      "Under the CSR initiative of the Bokaro Steel Plant, this program provides free, quality primary health care in remote areas of Bokaro district, Jharkhand.",
+    states: ["IN-JH"],
+    stats: {
+      totalRecords: 27840,
+      uniqueBeneficiaries: 12050,
+      revisitBeneficiaries: 15790,
+      totalLabTests: 16850,
+      numberOfMMUs: 1,
+      currentUsers: 6,
+    },
+  },
+  APL: {
+    programName: "APL",
+    description:
+      "To increase access to quality healthcare services and engage individuals and communities in managing their health and health systems.",
+    states: ["IN-AS", "IN-GJ", "IN-MP", "IN-MH", "IN-OR"],
+    stats: {
+      totalRecords: 373000,
+      uniqueBeneficiaries: 126000,
+      ncdScreeningCompleted: 77050,
+      totalLabTests: 190000,
+      diabetesMellitusIdentified: 137000,
+      numberOfMMUs: 21,
+      currentUsers: 22,
+    },
+  },
+  BSL: {
+    programName: "BSL",
+    description:
+      "Under the CSR initiative of Bokaro Steel Plant, this program provides free, quality primary health care in remote areas of Bokaro district, Jharkhand.",
+    states: ["IN-JH"],
+    stats: {
+      totalRecords: 28810,
+      uniqueBeneficiaries: 15040,
+      revisitBeneficiaries: 13770,
+      totalLabTests: 12640,
+      uniqueUsers: 5,
+    },
+  },
+  GOM: {
+    programName: "GOM",
+    description:
+      "Under the CSR initiative of the GUA Iron Ore Mines, this program provides free, quality primary health care in remote areas of GUA, West Singhbhum district, Jharkhand.",
+    states: ["IN-JH"],
+    stats: {
+      totalRecords: 5600,
+      uniqueBeneficiaries: 4100,
+      revisitBeneficiaries: 1500,
+      totalLabTests: 2500,
+      numberOfMMUs: 1,
+      uniqueUsers: 2,
+    },
+  },
+  SJVN: {
+    programName: "SJVN",
+    description:
+      "To provide quality primary health care services, including antenatal check-ups, early detection and treatment of diabetes and hypertension.",
+    states: ["IN-HP", "IN-UT", "IN-BR"],
+    stats: {
+      totalRecords: 22690,
+      uniqueBeneficiaries: 16160,
+      revisitBeneficiaries: 6530,
+      totalLabTests: 2500,
+      uniqueUsers: 5,
+    },
+  },
+  Saksham: {
+    programName: "Saksham",
+    description:
+      "The Saksham initiative aims to implement high-impact interventions in Assam's tea plantations, leveraging technology for data-driven decision-making.",
+    states: ["IN-AS"],
+    stats: {
+      totalRecords: 15850,
+      numberOfServiceLines: 2,
+      currentUsers: 11,
+    },
+  },
+  Majuli: {
+    programName: "Majuli",
+    description:
+      "Explore and assess the primary health, maternal and child health care, and non-communicable disease (NCD) needs in the area.",
+    states: ["IN-AS"],
+    stats: {
+      totalRecords: 6108000,
+      uniqueBeneficiaries: 3827000,
+      ncdScreeningCompleted: 6890,
+      diabetesMellitusIdentified: 2418000,
+      totalLabTests: 2672000,
+      currentUsers: 22,
+    },
+  },
+  KamrupHWC: {
+    programName: "Kamrup HWC",
+    description:
+      "The Detect Early, Save Him/Her (DESH) programme aims to screen the population in Kamrup district for oral, breast and cervical cancer through mobile units.",
+    states: ["IN-AS"],
+    stats: {
+      totalRecords: 101000,
+      uniqueBeneficiaries: 65490,
+      revisitBeneficiaries: 35560,
+      ncdScreeningCompleted: 97120,
+      totalLabTests: 38010,
+      uniqueUsers: 87,
+    },
+  },
+  Niramay: {
+    programName: "Niramay",
+    description:
+      "The 'Niramay' initiative aims to strengthen the public health delivery system through digitization and public-private partnerships.",
+    states: ["IN-MH"],
+    stats: {
+      totalRecords: 1580,
+      uniqueBeneficiaries: 1500,
+      womenBeneficiaries: 1200,
+      ancScreeningCompleted: 853,
+      totalLabTests: 646,
+      uniqueUsers: 24,
+    },
+  },
+  Bayer: {
+    programName: "Bayer",
+    description:
+      "The key objectives of this endeavour are to establish a telehealth facility in identified areas to provide comprehensive healthcare solutions.",
+    states: ["IN-MH"],
+    stats: {
+      totalRecords: 119000,
+      uniqueBeneficiaries: 101000,
+      revisitBeneficiaries: 18220,
+      ancScreeningCompleted: 11900,
+      totalLabTests: 54500,
+      uniqueUsers: 30,
+    },
+  },
+  Samarth: {
+    programName: "Samarth",
+    description:
+      "This initiative aims to enhance public health care delivery through mobile medical units (MMUs).",
+    states: ["IN-MH"],
+    stats: {
+      totalRecords: 86300,
+      uniqueBeneficiaries: 60020,
+      revisitBeneficiaries: 26290,
+      ncdScreeningCompleted: 96,
+      totalLabTests: 49120,
+      uniqueUsers: 117,
+    },
+  },
+  "104": {
+    programName: "104",
+    description:
+      "To provide preventive and curative health care services adequately to the people of the State with greater emphasis on quality.",
+    states: ["IN-AP", "IN-TG", "IN-RJ", "IN-KA"],
+    stats: {
+      recordsCreated: 13200000,
+      inboundCalls: 7101000,
+      outboundCalls: 6128000,
+      numberOfProjects: 4,
+    },
+  },
+  "1097": {
+    programName: "1097",
+    description:
+      "The National HIV/AIDS Helpline aims to provide comprehensive health information on HIV/AIDS and STIs.",
+    states: ["IN-DL", "IN-MH", "IN-TN", "IN-WB"],
+    stats: {
+      callsAnswered: 1365000,
+      numberOfProjects: 1,
+    },
+  },
+  OilSparsha: {
+    programName: "Oil-Sparsha",
+    description:
+      "The mobile healthcare initiative in remote OIL operating areas provides end-to-end primary healthcare services at beneficiaries' doorsteps.",
+    states: ["IN-AS"],
+    stats: {
+      totalRecords: 564000,
+      uniqueBeneficiaries: 167000,
+      revisitBeneficiaries: 397000,
+      diabetesMellitusScreening: 103000,
+      totalLabTests: 118000,
+      uniqueUsers: 22,
+    },
+  },
+  KIOMMMU: {
+    programName: "KIOM MMU",
+    description:
+      "Under the CSR initiative of KIRIBURU Iron Ore Mines, this program provides free, quality primary health care in remote areas of Kiri Buru, West Singhbhum district, Jharkhand.",
+    states: ["IN-JH"],
+    stats: {
+      totalRecords: 5870,
+      uniqueBeneficiaries: 4490,
+      revisitBeneficiaries: 1340,
+      hypertensionScreening: 931,
+      totalLabTests: 2820,
+      uniqueUsers: 3,
+    },
+  },
+  Sanjeevani: {
+    programName: "Sanjeevani",
+    description:
+      "In collaboration with the Government of Assam, implementing The Village Health Outreach Program across 30 districts.",
+    states: ["IN-AS"],
+    stats: {
+      totalRecords: 1956000,
+      uniqueBeneficiaries: 1073000,
+      revisitBeneficiaries: 882000,
+      ncdScreeningCompleted: 969000,
+      totalLabTests: 419000,
+      uniqueUsers: 79,
+    },
+  },
+  DRDAChaibasa: {
+    programName: "DRDA Chaibasa MMU",
+    description:
+      "The partnership focuses on building and scaling cutting-edge primary health innovations through policy interventions.",
+    states: ["IN-JH"],
+    stats: {
+      totalRecords: 67480,
+      uniqueBeneficiaries: 62330,
+      revisitBeneficiaries: 5140,
+      diabetesMellitusScreening: 15830,
+      totalLabTests: 30330,
+      uniqueUsers: 8,
+    },
+  },
+  BiharHWC: {
+    programName: "Bihar HWC",
+    description:
+      "The partnership focuses on building and scaling cutting-edge primary health innovations through policy interventions.",
+    states: ["IN-BR"],
+    stats: {
+      totalRecords: 8090,
+      uniqueBeneficiaries: 7730,
+      revisitBeneficiaries: 340,
+      ancVisits: 451,
+      totalLabTests: 484,
+      uniqueUsers: 13,
+    },
+  },
 };
 ---
 
@@ -34,58 +328,189 @@ const page_data = {
       <p class="text-center">{program.data.subtitle}</p>
     </div>
     <div class="container">
-    <div
-      class="key-feature-grid mt-10 grid grid-cols-1 m-5 gap-7 lg:grid-cols-2 place-items-center"
-    >
-      {
-        program.data.challenges.list.map((content: any) => {
-          return (
-            <div class="flex flex-col bg-white min-h-[250px] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-5 pb-8 text-center items-center justify-center w-full max-w-lg">
-              <h3 class="h4 text-xl lg:text-2xl p-3">{content.title}</h3>
-              <p>{content.subtitle}</p>
-            </div>
-          );
-        })
-      }
+      <div
+        class="key-feature-grid mt-10 grid grid-cols-1 m-5 gap-7 lg:grid-cols-2 place-items-center"
+      >
+        {
+          program.data.challenges.list.map((content: any) => {
+            return (
+              <div class="flex flex-col bg-white min-h-[250px] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-5 pb-8 text-center items-center justify-center w-full max-w-lg">
+                <h3 class="h4 text-xl lg:text-2xl p-3">{content.title}</h3>
+                <p>{content.subtitle}</p>
+              </div>
+            );
+          })
+        }
+      </div>
     </div>
-  </div>
   </section>
 
   <Faq client:load data={program.data} />
 
-  <div id="details-box" class="hidden"></div>
-  <div class="h-screen flex justify-center items-center">
-    <MapSvg />
+  <div
+    class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <!-- Map Section -->
+        <div class="w-full lg:w-1/2 bg-white rounded-2xl shadow-md p-6">
+          <div class="aspect-square max-h-[600px] m-auto md:max-h-full">
+            <MapSvg />
+          </div>
+        </div>
+
+        <!-- Program Details Section -->
+        <div class="w-full lg:w-1/2 space-y-6">
+          <!-- Program Selection -->
+          <div class="bg-white rounded-2xl shadow-md p-6">
+            <label
+              for="programSelect"
+              class="block text-lg font-semibold text-gray-900 mb-3"
+            >
+              Select Program
+            </label>
+            <select
+              id="programSelect"
+              data-object={JSON.stringify(deploymentData)}
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            >
+              {
+                Object.keys(deploymentData).map((programKey) => (
+                  <option value={programKey}>
+                    {
+                      deploymentData[programKey as keyof typeof deploymentData]
+                        .programName
+                    }
+                  </option>
+                ))
+              }
+            </select>
+
+            <!-- Program Description -->
+            <div class="mt-6">
+              <h3
+                id="programName"
+                class="text-xl font-semibold text-gray-900 mb-2"
+              >
+              </h3>
+              <p id="programDescription" class="text-gray-600"></p>
+            </div>
+          </div>
+
+          <!-- Program Stats -->
+          <div class="bg-white rounded-2xl shadow-md p-6">
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              Program Statistics
+            </h4>
+            <div
+              id="programStats"
+              class="grid grid-cols-2 sm:grid-cols-3 gap-4"
+            >
+              <!-- Stats will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    var tooltipSpan = document.getElementById("details-box");
+    const programSelectElement = document.querySelector("[data-object]");
+    const deploymentData = JSON.parse(
+      programSelectElement?.getAttribute("data-object") || "{}"
+    );
 
-    document.addEventListener("mouseover", function (e) {
-      const target = e.target as HTMLElement | null;
-      if (target && target.tagName === "path") {
-        const content = (target.dataset as DOMStringMap).name;
-        const detailsBox = document.getElementById("details-box");
-        if (detailsBox) {
-          detailsBox.innerHTML = content || "";
-          detailsBox.style.opacity = "100%";
-        }
-      } else {
-        const detailsBox = document.getElementById("details-box");
-        if (detailsBox) {
-          detailsBox.style.opacity = "0%";
-        }
-      }
-    });
+    const dropdown = document.getElementById("programSelect");
+    const svg = document.getElementById("svg2");
+    const programNameElement = document.getElementById("programName");
+    const programDescriptionElement =
+      document.getElementById("programDescription");
+    const programStatsElement = document.getElementById("programStats");
 
-    window.onmousemove = function (e) {
-      var x = e.clientX,
-        y = e.clientY;
-      if (tooltipSpan) {
-        tooltipSpan.style.display = "block";
-        tooltipSpan.style.top = y + 20 + "px";
-        tooltipSpan.style.left = x + "px";
+    function formatNumber(num: number) {
+      if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + "M";
+      } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + "K";
       }
-    };
+      return num.toString();
+    }
+
+    function updateProgramInfo(programKey: string) {
+      const program = deploymentData[programKey];
+      if (!program) return;
+
+      if (programNameElement) {
+        programNameElement.textContent = program.programName;
+      }
+      if (programDescriptionElement) {
+        programDescriptionElement.textContent = program.description;
+      }
+
+      // Update stats
+      const stats = program.stats;
+      if (programStatsElement) {
+        programStatsElement.innerHTML = "";
+      }
+
+      Object.entries(stats).forEach(([key, value]) => {
+        const formattedKey = key
+          .replace(/([A-Z])/g, " $1")
+          .toLowerCase()
+          .split(" ")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+
+        const statCard = document.createElement("div");
+        statCard.className = "bg-gray-50 p-4 rounded-lg";
+        statCard.innerHTML = `
+          <div class="text-lg font-semibold text-gray-900">${formatNumber(value as number)}</div>
+          <div class="text-sm text-gray-600 mt-1">${formattedKey}</div>
+        `;
+        if (programStatsElement) {
+          programStatsElement.appendChild(statCard);
+        }
+      });
+    }
+
+    function highlightStates(states: string[]) {
+      if (svg) {
+        Array.from(svg.childNodes).forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const element = node as Element;
+            if (states.includes(element.id)) {
+              (element as HTMLElement).style.fill = "#ff8567";
+              (element as HTMLElement).style.cursor = "pointer";
+              element.classList.add("transition-colors", "duration-300");
+
+              element.addEventListener("mouseenter", () => {
+                (element as HTMLElement).style.fill = "#ff6b47";
+              });
+              element.addEventListener("mouseleave", () => {
+                (element as HTMLElement).style.fill = "#ff8567";
+              });
+            } else {
+              (element as HTMLElement).style.fill = "#f0f0f0";
+              (element as HTMLElement).style.cursor = "default";
+              element.classList.remove("transition-colors", "duration-300");
+            }
+          }
+        });
+      }
+    }
+
+    if (dropdown) {
+      dropdown.addEventListener("change", (event) => {
+        const selectedProgram = (event.target as HTMLSelectElement).value;
+        const states = deploymentData[selectedProgram]?.states || [];
+        highlightStates(states);
+        updateProgramInfo(selectedProgram);
+      });
+
+      // Initial update
+      const initialProgram = (dropdown as HTMLSelectElement).value;
+      highlightStates(deploymentData[initialProgram]?.states || []);
+      updateProgramInfo(initialProgram);
+    }
   </script>
 </Base>

@@ -1,13 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 path {
-  stroke: white;
-  fill: paleturquoise !important;
+  stroke: #fff;
+  fill: #dbdbdb;
   transition: fill 0.4s ease;
-}
-
-path:hover {
-  fill: orange !important;
 }
 
 #ind-map {
@@ -18,14 +14,7 @@ path:hover {
   width: 100%;
   height: 100%;
 }
-path:hover,
-circle:hover {
-  stroke: #002868 !important;
-  stroke-width: 2px;
-  stroke-linejoin: round;
-  fill: #002868 !important;
-  cursor: pointer;
-}
+
 #path67 {
   fill: none !important;
   stroke: #a9a9a9 !important;
