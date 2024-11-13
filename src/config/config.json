@@ -1,28 +1,36 @@
 {
   "site": {
-    "title": "Pinwheel Astro",
-    "base_url": "https://pinwheel-astro.vercel.app",
+    "title": "Accessible Medical Records via Integrated Technologies",
+    "base_url": "https://amrit.piramalswasthya.org",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "147",
     "logo_height": "50",
-    "logo_text": "Pinwheel"
+    "logo_text": "AMRIT"
   },
 
   "settings": {
     "pagination": 6,
-    "summary_length": 100,
+    "summary_length": 200,
     "blog_folder": "blog"
   },
 
   "call_to_action": {
-    "title": "Empower your health journey with HWC",
-    "description": "PSMRI AMRIT HWC is a digital health platform developed by the Piramal Swasthya Management Research Institute (PSMRI) to enhance healthcare delivery in India. It stands for Accessible Medical Records via Integrated Technology Health and Wellness Center. The platform aims to connect beneficiaries, health facilities, and the healthcare workforce in an integrated ecosystem through technology.",
+    "title": "Contribute to AMRIT and Make a Difference",
+    "description": "Join our community to help improve healthcare technology for millions. Whether you're contributing code, enhancing documentation, or providing community support, every contribution counts.",
     "button": {
-      "label": "Jown Now",
-      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+      "label": "Start Contributing",
+      "link": "https://github.com/PSMRI/AMRIT"
+    }
+  },
+  "join_us":{
+    "title": "Partner with Us to Drive Impact",
+    "description": "Join us in our mission to transform communities through innovation and collaboration. We are actively seeking partnerships with forward-thinking technical experts, generous donors, and visionary knowledge leaders. Together, we can create sustainable change and bring our vision to life.",
+    "button": {
+      "label": "Become a partner",
+      "link": "/contact"
     }
   },
 
@@ -33,7 +41,7 @@
   },
 
   "params": {
-    "footer_description": "Integrated with ABDM, empowering healthcare services through digital transformation.",
+    "footer_description": "AMRIT is an open-source platform designed to strengthen primary healthcare by empowering frontline health workers with the right digital tools for data-driven decision-making and seamless access to patients' Electronic Health Records (EHR) through ABDM-compliant, interoperable systems.",
     "email": "amrit@piramalswasthya.org",
     "location": "3rd Floor,  No. 6-3-1112 AWFIS Oyster Complex, Greenlands Road Somajiguda, Begumpet Hyderabad – 500016, India.",
     "phone": "+91 (40) 49451999",

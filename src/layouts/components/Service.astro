@@ -9,26 +9,18 @@ const { homepage_tab, our_service } = service;
 
 <section class="section services">
   <div class="container">
-    <HomepageTab client:load homepage_tab={homepage_tab} />
     {
       our_service.map((item: any, index: number) => (
-        <div class="gx-5 row mt-12 items-center lg:mt-0">
+        <div class="gx-5 row mt-12 items-center">
           <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`}>
             {item.image && (
               <div class="relative">
                 <Image
-                  class="w-full object-contain"
+                  class="w-full object-contain rounded-2xl"
                   alt="service"
                   width={667}
                   height={498}
                   src={item.image}
-                />
-                <Image
-                  class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
-                  src="/images/shape-2.png"
-                  alt=""
-                  height={147}
-                  width={151}
                 />
               </div>
             )}

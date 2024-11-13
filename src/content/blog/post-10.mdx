@@ -1,24 +1,78 @@
 ---
-title: 6 Product Launch Email Examples You’ll Want to Steal
-subtitle: Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
+title: Streamlining AMRIT's Deployment with CI-CD Integration
+subtitle:  Enhancing the AMRIT CI/CD Pipeline - A robust CI-CD pipeline to improve development efficiency and reduce deployment risks.
 image: "/images/posts/post-2.png"
 author: Abdullah Al Shifat
 date: 2022-04-05T05:00:00Z
-categories: ["email marketing"]
+categories: ["Devops"]
 featured: true
 draft: false
+link: "https://psmri.github.io/PSMRI/developer-guides/technical-overview/"
 ---
+Deploying AMRIT's latest code to multiple servers across state data centres has long been a manual, time-consuming, and error-prone process, which resulted in frequent downtimes for critical services like 104 and 1097 helplines.
+To solve this challenge, we turned to the open-source community through the Code for Gov Tech’s Dedicated Mentorship Program, where we collaborated with open-source contributors to automate the deployment process using a Continuous Integration and Continuous Deployment (CI-CD) pipeline.
 
-Laoreet mauris odio ut nec. Nisl, sed adipiscing dignissim arcu placerat ornare pharetra nec in. Ultrices in nisl potenti vitae tempus. Auctor consectetur luctus eu in amet sagittis. Dis urna, vel hendrerit convallis Senectus feugiat faucibus commodo egestas leo vitae in morbi. Enim arcu dignissim mauris, eu, eget
 
-Pharetra odio amet pellentesque. Egestas nisi adipiscing sed in lectus. Vitae ultrices malesuada aliquet Faucibus consectetur tempus adipiscing vitae. Nec blandit tincidunt nibh nisi, quam volutpat. In lacus laoreet diam risus. Mauris, risus faucibus sagittis sagittis tincidunt id justo. Diam massa pretium consequat mauris viverra. Sagittis eu libero
+<strong>
+<h2>CHALLENGE:Manual Deployments and Downtime</h2>
+</strong>
+AMRIT's deployment structure—spread across numerous on-premise servers and data centres—posed a significant challenge. Each release required manual intervention, leading to service downtimes that affected thousands of health workers. Moreover, manual releases increased the risk of errors, making it difficult to maintain the platform's stability and responsiveness.
+With the need for a more streamlined process, our focus shifted towards implementing a robust CI-CD pipeline that would automate code testing, building, and deployment, while ensuring minimal downtime for these mission-critical services.
 
-<Blockquote name="Alexender Smith">
-  A wise girls her limit to touch.To Repellat neque praesentium .The me an idea,
-  so I as quickly To get.
-</Blockquote>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec et ipsum ullamcorper venenatis fringilla. Pretium, purus eu nec vulputate vel habitant egestas. Congue ornare at ipsum, viverra. Vitae magna faucibus eros, lectus sociis. Etiam nunc amet id dignissim. Feugiat id tempor vel sit in ornare turpis posuere. Eu quisque integer non rhoncus elementum vel. Quis nec viverra lectus augue nec praesent volutpat tortor. Ipsum eget sed tempus luctus nisl. Ut etiam molestie mattis at faucibus mi at pellentesque. Pellentesque morbi nunc, curabitur arcu euismod suscipit. Duis mi sapien, nisl, pulvinar donec non dictum
+Delivering comprehensive documentation detailing the CI/CD tools, pipeline setup, configurations, and usage instructions. The outcome includes a Jenkins setup where a few clicks will build and deploy the latest code to designated data centers, automating code testing, building, and deployment processes.
 
-Laoreet mauris odio ut nec. Nisl, sed adipiscing dignissim arcu placerat ornare pharetra nec in. Ultrices in nisl potenti vitae tempus. Auctor consectetur luctus eu in amet sagittis. Dis urna, vel hendrerit convallis cursus id.
-Senectus feugiat faucibus commodo egestas leo vitae in morbi. Enim arcu dignissim mauris, eu, eget pharetra odio amet pellentesque. Egestas nisi adipiscing sed in lectus. Vitae ultrices malesuada aliquet dignissim. Faucibus non tristique eu.
+
+<strong><h2>SOLUTION:  CI-CD Pipeline Implementation</h2></strong>
+
+Over the course of three months, in collaboration with a contributor selected through the Dedicated Mentorship Program, we successfully integrated a CI-CD pipeline for AMRIT. This solution included:
+
+<h3>Key Objectives:</h3>
+<ul>
+<li>
+<strong>CI-CD Tool Selection and GitHub Actions Tweaking:</strong>
+ We began by researching and selecting the best CI-CD tools for AMRIT’s deployment structure. GitHub Actions were enhanced to trigger unit tests and static code analysis to ensure code quality at every stage of development.
+ </li>
+ 
+<li>
+<strong>Automated Build and Deployment: </strong>
+ A Jenkins pipeline was developed to build war files and automate their deployment to WildFly servers. This automated process eliminated the need for manual intervention during releases, saving time and reducing human errors.
+ </li>
+
+<li>
+<strong>Database Schema Migrations: </strong>
+ One of the critical challenges was managing database schema migrations across multiple environments. The pipeline now automatically handles schema changes and synchronizes them across the deployment environment, ensuring consistency in data handling.
+ </li>
+
+<li>
+<strong>Seamless Sync to Higher Environments: </strong>
+ Once the deployment pipeline was tested in the development environment, the same process was replicated to production, allowing AMRIT's code to be promoted to higher environments with ease.
+ </li>
+
+</ul>
+
+<h3>Expected Outcomes:</h3>
+
+The contributor has created an initial implementation of CI-CD pipeline for a sandbox environment.  The implementation of the CI-CD pipeline for AMRIT in higher environments is expected to have following outcomes.
+<ul>
+<li>
+<strong>Minimal Downtime:</strong> The pipeline  will drastically reduc downtime for services like the 104 and 1097 helplines. Health workers will be able to access critical systems with little to no interruption, even during releases.
+</li>
+<li>
+<strong>Automated, Secure Deployments:</strong> The new pipeline automates code testing, building, and deployment, reducing manual intervention and associated risks. Sensitive information, such as database passwords and API keys, will be managed securely within the pipeline.
+</li>
+<li>
+<strong>Database Schema Migration:</strong> With automated schema migrations, database consistency will be maintained across all servers, ensuring smooth, error-free deployments.
+</li>
+<li>
+<strong>Improved Efficiency and Stability:</strong> AMRIT’s development and release process is will be faster, more efficient, and stable. Jenkins pipeline will allow releases with just a few clicks, promoting frequent updates and improving the platform's overall reliability.
+</li>
+</ul>
+
+<h3>About the Contributor</h3>
+
+Shakyan Kushwaha is a Computer Science and Engineering graduate from IIITDM Jabalpur. His passion for DevOps, software development, and cloud technologies led him to contribute to healthcare tech solutions like AMRIT with Code for GovTech's DMP initiative. With experience at IBM and expertise in optimizing CI/CD pipelines, Shakyan is dedicated to improving healthcare accessibility and efficiency.
+
+<h3>Conclusion</h3>
+
+The integration of a CI-CD pipeline into the AMRIT platform is a significant step toward streamlining healthcare service delivery in India. Through our collaboration with Code for Gov Tech’s Dedicated Mentorship Program, we have not only automated the deployment process but also ensured that critical healthcare services remain stable and accessible to millions of beneficiaries. This success story is a testament to the power of collaboration between the healthcare and tech communities in solving real-world challenges at scale.

@@ -1,58 +1,58 @@
 ---
 banner:
-  title: "Scale design & dev operations with Avocode Enterprise"
-  content: "A fully integrated suite of authentication & authoriz products, Stytch’s platform removes the headache of."
-  image: /images/banner-img.png
+  title: "Accessible Medical Records via Integrated Technologies"
+  content: "Transforming primary healthcare through digital innovation, empowering frontline workers, and ensuring equitable access for all."
+  image: /images/banner.webp
   button:
     label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    enable: false
 
 ##key features
 key_features:
-  title: "The Highlighting Part Of Our Solution"
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
+  title: "Key Features and Unique Solutions of AMRIT"
+  description: Empowering Indian public health with comprehensive, technology-driven solutions that enhance care delivery, streamline workflows, and ensure seamless, secure access to patient data.
   feature_list:
     - id: 1
-      icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Live Caption
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaHandHoldingHeart"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Comprehensive EHR Management
+      content: AMRIT enables the creation and management of Electronic Health Records (EHR) with a unique identifier, ensuring interoperability across service lines.
     - id: 2
-      icon: "lock"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Smart Reply
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaFilePen"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Customizable Registration and ABHA Integration
+      content: The registration module is adaptable to project needs and supports ABHA card generation using Aadhaar OTP and biometric verification.
     - id: 3
-      icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaLock"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Role-Based User Access
+      content: The platform offers role-based access control to cater to various healthcare roles, enhancing workflow efficiency and security.
     - id: 4
-      icon: "bell"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaTowerCell"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Offline Functionality
+      content: Both the Health and Wellness Centre (HWC) and Mobile Medical Unit (MMU) applications have offline capabilities, ensuring uninterrupted service in areas with limited connectivity.
     - id: 5
-      icon: "monitor"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Smart Reply
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaPuzzlePiece"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Integrated Point-of-Care Devices
+      content: AMRIT supports integration with Point of Care Testing (POCT) devices, facilitating vitals capture and diagnostics.
     - id: 6
-      icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Live Caption
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaFilePrescription"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Clinical Decision Support System
+      content: The platform includes tools that aid in clinical decisions, improving diagnostic accuracy and treatment plans.
     - id: 7
-      icon: "link"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaLaptopMedical"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Compliance with Health Standards
+      content: AMRIT complies with health standards such as SNOMED CT, HL7, and LOINC, aligning with global and national health data protocols.
     - id: 8
-      icon: "bell"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Sound Amplifier
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaLanguage"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Multilingual Support
+      content: The platform supports multiple languages to cater to diverse user bases across different regions.
     - id: 9
-      icon: "map"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Smart Reply
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaRegCalendarCheck"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Scheduling and Revisit Management
+      content: AMRIT allows for scheduling follow-ups and managing revisits, ensuring continuity of care for beneficiaries.
     - id: 10
-      icon: "monitor"  #icon package react-feather-icon [https://feathericons.com/]
-      title: Live Caption
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      icon: "FaPills"  #icon package react-feather-icon [https://feathericons.com/]
+      title: Inventory Management
+      content: Built-in inventory management for pharmacists helps track and manage stock distribution at healthcare facilities.
 #service
 service:
   homepage_tab:
@@ -70,21 +70,23 @@ service:
           image: "/images/sells-by-country.png"
 
   our_service:
-    - title: Accept payments any country in this whole universe
-      desctiption: Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed
-      image: "/images/collaboration.png"
+    - title: Transforming Healthcare Through AMRIT’s Programs
+      desctiption: Discover how AMRIT’s initiatives have improved healthcare delivery and supported millions across India.
+      image: "/images/landing.webp"
       list:
-        - Supporting more than 119 country world
-        - Open transaction with more than currencies
-        - Customer Service with 79 languages
-    - title: Accountability that works for you
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas Werat viverra id et aliquet. vulputate egestas sollicitudin.
-      video:
-        thumbnail: "/images/intro-thumbnail.png"
-        video_id: "g3-VxLQO7do"
+        - Reached 2+ crore beneficiaries in 16 states.
+        - Deployed in 46+ facilities.
+        - Equipped health workers with right digital tools.
       button:
-        label: Know About Us
-        link: "#"
+        label: Explore Our Programs
+        link: "/programs"
+        enable: true  
+    - title: Our Vision and Journey
+      description: Learn more about AMRIT’s mission, development principles, the dedicated team behind it, and our journey to transforming public health.
+      image:  "/images/landing2.webp"
+      button:
+        label: Read More About Us
+        link: "/about"
         enable: true
 
 #testimonial

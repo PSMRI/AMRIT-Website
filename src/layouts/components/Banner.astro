@@ -10,9 +10,7 @@ const { title, button, image, content } = banner;
     <div class="row items-center">
       <div class="lg:col-6">
         <h1 class="banner-title" set:html={markdownify(title)} />
-
         <p class="mt-6" set:html={markdownify(content)} />
-
         {
           button.enable && (
             <a class="btn btn-white mt-8" href={button.link}>

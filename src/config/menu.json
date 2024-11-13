@@ -9,8 +9,8 @@
       "url": "/about"
     },
     {
-      "name": "Documentation",
-      "url": "/how-it-works"
+      "name": "Community",
+      "url": "/amrit-community"
     },
     {
       "name": "Programs",
@@ -51,8 +51,8 @@
       ]
     },
     {
-      "name": "Partnership",
-      "url": "/blog"
+      "name": "Partnerships",
+      "url": "/partnerships"
     },
     {
       "name": "Contact",
@@ -66,16 +66,16 @@
       "url": "/about"
     },
     {
-      "name": "Documentation",
-      "url": "/how-it-works"
-    },
-    {
       "name": "Products",
       "url": "/blog"
     },
     {
       "name": "Contact",
       "url": "/contact"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/PSMRI/AMRIT"
     }
   ]
 }

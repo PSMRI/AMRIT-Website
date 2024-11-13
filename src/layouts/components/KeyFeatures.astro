@@ -1,12 +1,11 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import FeatureCard from "@/layouts/function-components/FeatureCard";
+import HomePageFeature from "@/layouts/function-components/HomePageFeature";
 const { key_features } = Astro.props;
 const { title, description, feature_list } = key_features;
 ---
 
 <section class="section key-feature relative">
-  
   <div class="container">
     <div class="row justify-between text-center lg:text-start">
       <div class="lg:col-5">
@@ -16,9 +15,6 @@ const { title, description, feature_list } = key_features;
         <p set:html={markdownify(description)} />
       </div>
     </div>
-    <FeatureCard feature_list={feature_list} client:load
-      cardHeight="h-[300px]"
-      cardShadow="shadow-md hover:shadow-lg transition-shadow duration-300"
-    />
+    <HomePageFeature feature_list={feature_list} client:load />
   </div>
 </section>

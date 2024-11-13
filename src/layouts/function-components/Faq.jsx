@@ -16,12 +16,12 @@ const Faq = ({ data }) => {
       <div className="container max-w-[1230px]">
         <div className="row">
           <div className="text-center lg:col-4 lg:text-start">
-            <h2>{data.faq.title}</h2>
-            <p className="mt-6 lg:max-w-[404px]">{data.faq.description}</p>
+            <h2>{data.approach.title}</h2>
+            <p className="mt-6 lg:max-w-[404px]">{data.approach.subtitle}</p>
           </div>
           <div className="mt-8 lg:col-8 lg:mt-0">
             <div className="rounded-xl bg-white px-5 py-5 shadow-lg lg:px-10 lg:py-8">
-              {data.faq.faq_list.map((item, i) => (
+              {data.approach.list.map((item, i) => (
                 <div
                   className={`accordion border-b border-border ${
                     isActive.includes(i) ? "active" : undefined
@@ -50,7 +50,7 @@ const Faq = ({ data }) => {
                   <div className="accordion-content pl-6">
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: marked.parseInline(item.content),
+                        __html: marked.parseInline(item.subtitle),
                       }}
                     />
                   </div>

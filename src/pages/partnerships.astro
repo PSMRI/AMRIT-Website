@@ -1,0 +1,35 @@
+---
+import PageHeader from "@/components/PageHeader.astro";
+import Partners from "@/components/Partners.astro";
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import Cta from "@/layouts/partials/Cta.astro";
+import JoinUs from "@/layouts/partials/JoinUs.astro";
+import { getEntryBySlug } from "astro:content";
+
+const { blog_folder } = config.settings;
+const blogIndex = await getEntryBySlug(blog_folder, "-index");
+const partners = await getEntryBySlug("partnership", "index");
+const { knowledge_partners, donors, technical_partners } = partners.data;
+---
+
+<Base
+  title={blogIndex.data.title}
+  meta_title={blogIndex.data.meta_title}
+  description={blogIndex.data.description}
+  image={blogIndex.data.image}
+>
+  <section class="page-hero pt-16">
+    <div class="container">
+      <PageHeader page_data={partners.data.header} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <Partners data={knowledge_partners} />
+      <Partners data={donors} />
+      <Partners data={technical_partners} />
+    </div>
+  </section>
+  <JoinUs />
+</Base>

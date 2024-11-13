@@ -1,29 +1,32 @@
 ---
-const { counter } = Astro.props;
+const { counter: { impact_list, title } } = Astro.props;
 ---
 
 <div class="counter mt-16">
-  <div class="flex flex-wrap justify-between rounded-[20px] bg-white px-4 lg:px-10 shadow-sm py-8 lg:py-10">
-    {
-      counter.map((item: any) => (
-        <div class="w-full sm:w-1/2 lg:w-1/5 px-4 py-6 text-center border-b sm:border-r lg:border-b-0 lg:border-r last:border-none">
-          <h2>
-            <span class="count" data-unit={item.messurment} aria-valuenow={item.number}>
+  <div class="bg-white px-4 lg:px-10 shadow-sm py-8 lg:py-10 rounded-[20px]">
+    <h6 class="text-center mb-10">{title}</h6>
+    <div class="flex flex-wrap justify-between">
+      {
+        impact_list.map((item: any) => (
+          <div class="w-full sm:w-1/2 lg:w-1/5 px-4 py-6 text-center border-b sm:border-r lg:border-b-0 lg:border-r last:border-none">
+            <h2>
+            <span class="count" data-unit={item.measurement} aria-valuenow={item.number}>
               0
             </span>
-            <span
-              class="text-palette-orange"
-              style={{
-                color: item.color,
-              }}
-            >
+              <span
+                class="text-palette-orange"
+                style={{
+                  color: item.color,
+                }}
+              >
               +
             </span>
-          </h2>
-          <p>{item.name}</p>
-        </div>
-      ))
-    }
+            </h2>
+            <p>{item.name}</p>
+          </div>
+        ))
+        }
+    </div>
   </div>
 </div>
 
