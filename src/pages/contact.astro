@@ -23,16 +23,22 @@ if (Astro.request.method === "POST") {
     });
 
     formUrl = `${url}/api/sendEmail`
-    fetchResponse = await response.text();
 
-    const data = await response.json();
-    if (response.status === 200) {
-      message = data.message;
-      messageType = "success"; // Success
-    } else {
-      message = "Something went wrong. Please try again.";
-      messageType = "error"; // Failure
+    try {
+      const data = await response.json();
+      if (response.status === 200) {
+        message = data.message;
+        messageType = "success"; // Success
+      } else {
+        message = "Something went wrong. Please try again.";
+        messageType = "error"; // Failure
+      }
+    } catch (e) {
+      message = "JSON parsing error";
+      messageType = "error";
+      fetchResponse = await response.text();
     }
+
   } catch (error) {
     if (error instanceof Error) {
       message = `Error: ${error.message}`;
