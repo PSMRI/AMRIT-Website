@@ -24,6 +24,7 @@ if (Astro.request.method === "POST") {
 
     formUrl = `${url}/api/sendEmail`
 
+    const clonedResponse = response.clone();
     try {
       const data = await response.json();
       if (response.status === 200) {
@@ -36,7 +37,7 @@ if (Astro.request.method === "POST") {
     } catch (e) {
       message = "JSON parsing error";
       messageType = "error";
-      fetchResponse = await response.text();
+      fetchResponse = await clonedResponse.text();
     }
 
   } catch (error) {
