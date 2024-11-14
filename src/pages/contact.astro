@@ -14,8 +14,7 @@ let messageType = "";
 if (Astro.request.method === "POST") {
   try {
     const formData = await Astro.request.formData();
-    const url = new URL(Astro.request.url).origin;
-    const response = await fetch(`${url}/api/sendEmail`, {
+    const response = await fetch(`${Astro.url}/api/sendEmail`, {
       method: "POST",
       body: formData,
     });
