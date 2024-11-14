@@ -12,7 +12,7 @@ const page_data = {
 let message = "";
 let messageType = "";
 let formUrl = ""
-let data = ""
+let fetchResponse = ""
 if (Astro.request.method === "POST") {
   try {
     const formData = await Astro.request.formData();
@@ -23,7 +23,7 @@ if (Astro.request.method === "POST") {
     });
 
     formUrl = `${url}/api/sendEmail`
-    data = await response.text();
+    fetchResponse = await response.text();
 
     const data = await response.json();
     if (response.status === 200) {
@@ -60,7 +60,7 @@ if (Astro.request.method === "POST") {
             <div class={`message ${messageType === 'success' ? 'success' : 'error'}`}>
               <p>{message}</p>
               <p>{formUrl}</p>
-              <p>{data}</p>
+              <p>{fetchResponse}</p>
             </div>
           )}
           <form
