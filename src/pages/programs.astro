@@ -15,13 +15,12 @@ const deploymentData = {
   STFC: {
     programName: "STFC Interventions",
     description:
-      "To enhance the overall health of the trucker community, we aim to encourage health-seeking behaviour by educating truck drivers to consistently use medications for non-communicable diseases (NCDs) and utilise follow-up services from local primary health centres (PHCs) and health and wellness centres (H&WCs).",
+      "To enhance the overall health of the trucker community, we aim to encourage health-seeking behaviour by educating truck drivers to consistently use medications for non-communicable diseases (NCDs) and utilise follow-up services from local primary health centres (PHCs) and health and wellness centres (H&WCs). Additionally, we strive to establish our brand as caring and responsible through corporate social responsibility (CSR) initiatives focused on healthcare and water.",
     states: [
       "IN-MH",
       "IN-GJ",
       "IN-RJ",
-      "IN-MP",
-      "IN-UP",
+      "IN-AS",
       "IN-BR",
       "IN-WB",
       "IN-TN",
@@ -29,8 +28,8 @@ const deploymentData = {
       "IN-AP",
       "IN-TG",
       "IN-OR",
-      "IN-DL",
-    ], // 13 states mentioned
+      "IN-HP",
+    ],
     stats: {
       totalRecords: 295000,
       uniqueBeneficiaries: 121000,
@@ -44,7 +43,7 @@ const deploymentData = {
   SehatOkPlease: {
     programName: "Sehat Ok Please",
     description:
-      "The social impact initiative of establishing mobile medical units in Maharashtra for non-communicable diseases (NCDs) screening and awareness.",
+      "Taking this into consideration, the social impact initiative of establishing mobile medical units in Maharashtra for non-communicable diseases (NCDs) screening and awareness, was introduced. We have been able to successfully deploy the mobile medical units in a total of 10 districts in Maharashtra. This initiative was carried out in partnership with Piramal Swasthya Foundation",
     states: ["IN-MH"],
     stats: {
       totalRecords: 656000,
@@ -59,7 +58,7 @@ const deploymentData = {
   PiramalArogyaSeva: {
     programName: "Piramal Arogya Seva Digwal",
     description:
-      "To provide quality primary health care services to underserved and unserved populations within a 10 km radius of the Piramal Enterprises factory.",
+      "To provide quality primary health care services to underserved and unserved populations within a 10 km radius of the Piramal Enterprises factory, including antenatal check-ups for pregnant women, early detection and management of diabetes and hypertension, health awareness programs, and community participation, with a focus on all age groups and geriatric care.",
     states: ["IN-TG"],
     stats: {
       totalRecords: 49130,
@@ -74,7 +73,7 @@ const deploymentData = {
   BPSCL: {
     programName: "BPSCL",
     description:
-      "Under the CSR initiative of the Bokaro Steel Plant, this program provides free, quality primary health care in remote areas of Bokaro district, Jharkhand.",
+      "Under the CSR initiative of the Bokaro Steel Plant, this program provides free, quality primary health care—including curative, reproductive, child health services, diagnosis, and awareness—to underprivileged settlements in remote areas of Bokaro district, Jharkhand, ensuring reliable service and follow-up at the doorsteps of the people.​",
     states: ["IN-JH"],
     stats: {
       totalRecords: 27840,
@@ -88,8 +87,8 @@ const deploymentData = {
   APL: {
     programName: "APL",
     description:
-      "To increase access to quality healthcare services and engage individuals and communities in managing their health and health systems.",
-    states: ["IN-AS", "IN-GJ", "IN-MP", "IN-MH", "IN-OR"],
+      "To increase access to quality healthcare services and engage individuals and communities in managing their health and health systems, we aim to provide primary health care, including NCD management and treatment of minor ailments, within selected villages near APL plant areas. Additionally, we strive to improve health-seeking behavior through digital platforms and reduce out-of-pocket expenses.​",
+    states: ["IN-UP", "IN-MH", "IN-KA", "IN-AP", "IN-TG"],
     stats: {
       totalRecords: 373000,
       uniqueBeneficiaries: 126000,
@@ -103,7 +102,7 @@ const deploymentData = {
   BSL: {
     programName: "BSL",
     description:
-      "Under the CSR initiative of Bokaro Steel Plant, this program provides free, quality primary health care in remote areas of Bokaro district, Jharkhand.",
+      "Under the CSR initiative of Bokaro Steel Plant, this program provides free, quality primary health care—including curative, reproductive, child health services, diagnosis, and awareness—to underprivileged settlements in remote areas of Bokaro district, Jharkhand, ensuring reliable service and follow-up at the people's doorsteps​",
     states: ["IN-JH"],
     stats: {
       totalRecords: 28810,
@@ -116,7 +115,7 @@ const deploymentData = {
   GOM: {
     programName: "GOM",
     description:
-      "Under the CSR initiative of the GUA Iron Ore Mines, this program provides free, quality primary health care in remote areas of GUA, West Singhbhum district, Jharkhand.",
+      "Under the CSR initiative of the GUA Iron Ore Mines, this program provides free, quality primary health care—including curative, reproductive, child health services, diagnosis, and awareness—to underprivileged settlements in remote areas of GUA, West Singhbhum district, Jharkhand, ensuring reliable service and follow-up at the people's doorsteps​",
     states: ["IN-JH"],
     stats: {
       totalRecords: 5600,
@@ -130,8 +129,8 @@ const deploymentData = {
   SJVN: {
     programName: "SJVN",
     description:
-      "To provide quality primary health care services, including antenatal check-ups, early detection and treatment of diabetes and hypertension.",
-    states: ["IN-HP", "IN-UT", "IN-BR"],
+      "To provide quality primary health care services, including antenatal check-ups, early detection and treatment of diabetes and hypertension, and community health education on health, hygiene, and addiction issues, ensuring strong referral networks and follow-up in remote, inaccessible areas​",
+    states: ["IN-HP", "IN-GJ", "IN-UP"],
     stats: {
       totalRecords: 22690,
       uniqueBeneficiaries: 16160,
@@ -143,7 +142,7 @@ const deploymentData = {
   Saksham: {
     programName: "Saksham",
     description:
-      "The Saksham initiative aims to implement high-impact interventions in Assam's tea plantations, leveraging technology for data-driven decision-making.",
+      "The Saksham initiative aims to implement high-impact interventions in Assam's tea plantations, leveraging technology for data-driven decision-making. It focuses on introducing point-of-care devices for frontline workers (FLWs) and healthcare providers at the district level, alongside demonstrating process innovations to enhance existing program implementation.",
     states: ["IN-AS"],
     stats: {
       totalRecords: 15850,
@@ -154,7 +153,7 @@ const deploymentData = {
   Majuli: {
     programName: "Majuli",
     description:
-      "Explore and assess the primary health, maternal and child health care, and non-communicable disease (NCD) needs in the area.",
+      "Explore and assess the primary health, maternal and child health care, and non-communicable disease (NCD) needs in the area, including estimating reported prevalence and morbidity related to NCDs. Identify challenges in accessing, availing, and affording existing healthcare facilities in the district, and determine major health risk factors and causes of ill health among the population.​",
     states: ["IN-AS"],
     stats: {
       totalRecords: 6108000,
@@ -168,7 +167,7 @@ const deploymentData = {
   KamrupHWC: {
     programName: "Kamrup HWC",
     description:
-      "The Detect Early, Save Him/Her (DESH) programme aims to screen the population in Kamrup district for oral, breast and cervical cancer through mobile units.",
+      "The Detect Early, Save Him/Her (DESH) programme aims to screen the population in Kamrup district for oral, breast and cervical cancer through mobile units, create community awareness,​",
     states: ["IN-AS"],
     stats: {
       totalRecords: 101000,
@@ -182,8 +181,8 @@ const deploymentData = {
   Niramay: {
     programName: "Niramay",
     description:
-      "The 'Niramay' initiative aims to strengthen the public health delivery system through digitization and public-private partnerships.",
-    states: ["IN-MH"],
+      "The 'Niramay' initiative aims to strengthen the public health delivery system through digitization and public-private partnerships. It seeks to enable a continuum of care and real-time data accessibility for informed decision-making, thereby enhancing healthcare quality and delivery experience at the grassroots level.​",
+    states: ["IN-AS"],
     stats: {
       totalRecords: 1580,
       uniqueBeneficiaries: 1500,
@@ -196,8 +195,8 @@ const deploymentData = {
   Bayer: {
     programName: "Bayer",
     description:
-      "The key objectives of this endeavour are to establish a telehealth facility in identified areas to provide comprehensive healthcare solutions.",
-    states: ["IN-MH"],
+      "The key objectives of this endeavour are to establish a telehealth facility in identified areas to provide comprehensive healthcare solutions, conduct training and awareness sessions on health, hygiene, and nutrition, and organize regular medical camps focusing on specific health aspects such as breast cancer, diabetes, and dermatology​",
+    states: ["IN-JH"],
     stats: {
       totalRecords: 119000,
       uniqueBeneficiaries: 101000,
@@ -210,7 +209,7 @@ const deploymentData = {
   Samarth: {
     programName: "Samarth",
     description:
-      "This initiative aims to enhance public health care delivery through mobile medical units (MMUs).",
+      "This initiative aims to enhance public health care delivery through mobile medical units (MMUs), focusing on addressing key healthcare needs such as Mother and Child Health (MCH) and Non-Communicable Disease (NCD) management to ensure continuous access to critical health services​",
     states: ["IN-MH"],
     stats: {
       totalRecords: 86300,
@@ -224,8 +223,8 @@ const deploymentData = {
   "104": {
     programName: "104",
     description:
-      "To provide preventive and curative health care services adequately to the people of the State with greater emphasis on quality.",
-    states: ["IN-AP", "IN-TG", "IN-RJ", "IN-KA"],
+      "To provide preventive and curative health care services adequately to the people of the State with greater emphasis on quality. Health Information Helpline (HIHL) Services provides round-the-clock (24*7) health advice, medical advice and counselling services to remote and vulnerable sections of the community. It aims to reduce the minor ailment load on the Public Health system by providing medical information and advice, virtually.​",
+    states: ["IN-HP", "IN-BR", "IN-AS", "IN-JH"],
     stats: {
       recordsCreated: 13200000,
       inboundCalls: 7101000,
@@ -236,8 +235,8 @@ const deploymentData = {
   "1097": {
     programName: "1097",
     description:
-      "The National HIV/AIDS Helpline aims to provide comprehensive health information on HIV/AIDS and STIs.",
-    states: ["IN-DL", "IN-MH", "IN-TN", "IN-WB"],
+      "The National HIV/AIDS Helpline aims to provide comprehensive health information on HIV/AIDS and STIs, offer professional counseling while ensuring caller anonymity, enhance the utilization of referral services for HIV prevention, care, and treatment, and inform beneficiaries about relevant social protection schemes.​",
+    states: ["IN-HP", "IN-RJ", "IN-TG", "IN-AS"],
     stats: {
       callsAnswered: 1365000,
       numberOfProjects: 1,
@@ -246,7 +245,7 @@ const deploymentData = {
   OilSparsha: {
     programName: "Oil-Sparsha",
     description:
-      "The mobile healthcare initiative in remote OIL operating areas provides end-to-end primary healthcare services at beneficiaries' doorsteps.",
+      "The mobile healthcare initiative in remote OIL operating areas provides end-to-end primary healthcare services at beneficiaries' doorsteps, focusing on diagnosing and treating NCDs, chronic diseases, and common ailments. Services include health checkups, lab tests, dispensing medicines with valid prescriptions, and raising awareness on lifestyle diseases and special relief camps.​",
     states: ["IN-AS"],
     stats: {
       totalRecords: 564000,
@@ -260,7 +259,7 @@ const deploymentData = {
   KIOMMMU: {
     programName: "KIOM MMU",
     description:
-      "Under the CSR initiative of KIRIBURU Iron Ore Mines, this program provides free, quality primary health care in remote areas of Kiri Buru, West Singhbhum district, Jharkhand.",
+      "Under the CSR initiative of KIRIBURU Iron Ore Mines, this program provides free, quality primary health care—including curative, reproductive, child health services, diagnosis, and awareness—to deprived settlements in remote areas of Kiri Buru, West Singhbhum district, Jharkhand, ensuring reliable service and follow-up at the people's doorsteps.​",
     states: ["IN-JH"],
     stats: {
       totalRecords: 5870,
@@ -274,7 +273,7 @@ const deploymentData = {
   Sanjeevani: {
     programName: "Sanjeevani",
     description:
-      "In collaboration with the Government of Assam, implementing The Village Health Outreach Program across 30 districts.",
+      "In collaboration with the Government of Assam, we will implement The Village Health Outreach Program across 30 districts, providing identification, screening, referral, follow-up, and free medicine for lifestyle and non-communicable diseases, chronic diseases, antenatal care, and minor ailments. The program will serve at least two settlements of 1500 people each day, following a 23-day monthly calendar​",
     states: ["IN-AS"],
     stats: {
       totalRecords: 1956000,
@@ -288,7 +287,7 @@ const deploymentData = {
   DRDAChaibasa: {
     programName: "DRDA Chaibasa MMU",
     description:
-      "The partnership focuses on building and scaling cutting-edge primary health innovations through policy interventions.",
+      "The partnership focuses on building and scaling cutting-edge primary health innovations through policy interventions. By integrating AI for evidence-based decision-making, it aims to reduce maternal and child deaths through timely insights and effective policymaking and intervention.​",
     states: ["IN-JH"],
     stats: {
       totalRecords: 67480,
@@ -302,7 +301,7 @@ const deploymentData = {
   BiharHWC: {
     programName: "Bihar HWC",
     description:
-      "The partnership focuses on building and scaling cutting-edge primary health innovations through policy interventions.",
+      "The partnership focuses on building and scaling cutting-edge primary health innovations through policy interventions. By integrating AI for evidence-based decision-making, it aims to reduce maternal and child deaths through timely insights and effective policymaking and intervention.​",
     states: ["IN-BR"],
     stats: {
       totalRecords: 8090,
@@ -482,13 +481,6 @@ const deploymentData = {
               (element as HTMLElement).style.fill = "#ff8567";
               (element as HTMLElement).style.cursor = "pointer";
               element.classList.add("transition-colors", "duration-300");
-
-              element.addEventListener("mouseenter", () => {
-                (element as HTMLElement).style.fill = "#ff6b47";
-              });
-              element.addEventListener("mouseleave", () => {
-                (element as HTMLElement).style.fill = "#ff8567";
-              });
             } else {
               (element as HTMLElement).style.fill = "#f0f0f0";
               (element as HTMLElement).style.cursor = "default";
