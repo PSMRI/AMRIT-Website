@@ -1,0 +1,52 @@
+---
+import Base from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import { GitHub,Linkedin } from "react-feather";
+import { getEntryBySlug } from "astro:content";
+const credits = await getEntryBySlug("credits", "index");
+---
+
+<Base>
+  <section class="section">
+    <div class="container">
+      <h1 class="text-center my-5">
+        {credits.data.title}
+      </h1>
+      <p class="text-center my-5">{credits.data.subtitle}</p>
+      <div class="mt-10">
+        <h2 class="text-center my-5">{credits.data.team.title}</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 place-items-center">
+          {
+            credits.data.team.list.map((content: any) => (
+              <div class="flex flex-col bg-white min-h-[250px] rounded-xl shadow-md p-5 pb-8 text-center items-center justify-center w-full max-w-lg">
+                <div class="w-full flex justify-center">
+                    <Image
+                      height={300}
+                      width={200}
+                      class="object-cover rounded-2xl"
+                      src={content.image}
+                      alt=""
+                    />
+                  </div>
+                <h3 class="h4 text-xl lg:text-2xl p-3">{content.name}</h3>
+                <p>{content.title}</p>
+                <span class="flex align-center justify-center mt-4" >
+                      {
+                        (
+                          <a href={content.github} target="_blank" rel="noreferrer" class="m-4">
+                            <GitHub />
+                          </a>
+                          <a href={content.linkedin} target="_blank" rel="noreferrer" class="m-4">
+                            <Linkedin />
+                          </a>
+                        )
+                      }
+                    </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
