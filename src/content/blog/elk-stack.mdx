@@ -1,0 +1,81 @@
+---
+title: Centralized Logging Solution for AMRIT's Distributed Infrastructure
+subtitle: Implementing an ELK Stack Logging Strategy for Comprehensive System Monitoring
+image: "/images/posts/elk-stack.webp"
+author: AMRIT Technical Team
+date: 2024-12-08T10:00:00Z
+categories: ["DevOps", "Logging", "Monitoring"]
+featured: true
+draft: false
+---
+
+<strong>
+<h2>CHALLENGE: Distributed Logging Complexity</h2>
+</strong>
+
+AMRIT's infrastructure—spread across multiple servers located nationwide—presented significant logging and monitoring challenges. With servers dispersed across the country, tracking system performance, identifying issues, and maintaining comprehensive system visibility became increasingly complex. The need for a centralized, effective logging solution became paramount to ensure system reliability and quick troubleshooting.
+
+<strong>
+<h2>SOLUTION: ELK Stack Logging Infrastructure</h2>
+</strong>
+
+Over the course of implementing the logging strategy, we successfully developed a comprehensive centralized logging solution using the ELK stack. This solution included:
+
+<h3>Key Objectives:</h3>
+<ul>
+<li>
+<strong>ECS Logging Configuration:</strong> 
+Implemented standardized logging across all API services using Elastic Common Schema (ECS) for consistent log formatting.
+</li>
+
+<li>
+<strong>Log Collection Infrastructure:</strong> 
+Deployed Filebeat and APM agents to collect logs and traces from distributed servers, enabling comprehensive system monitoring.
+</li>
+
+<li>
+<strong>Source Identification:</strong> 
+The logs and traces were injected with an <i>environment</i> property to precisely identify log sources across multiple server locations.
+</li>
+
+<li>
+<strong>Intelligent Log Management:</strong> 
+Implemented an effective log sharding strategy to optimize index management and improve query efficiency, with a log retention policy for systematic data pruning and storage management.
+</li>
+</ul>
+
+<h3>Expected Outcomes:</h3>
+The implementation of the centralized ELK stack logging solution for AMRIT is expected to have the following outcomes:
+
+<ul>
+<li>
+<strong>Enhanced Visibility:</strong> 
+Provide a single, comprehensive view of logs across distributed services, enabling rapid issue identification and resolution.
+</li>
+
+<li>
+<strong>Improved System Reliability:</strong> 
+Enable faster troubleshooting and performance monitoring across AMRIT's nationwide server network, with APM traces providing deep insights into query performance, latency metrics, error tracking, and application bottlenecks.
+</li>
+
+<li>
+<strong>Secure Access Control:</strong> 
+Role based access control policy controls log and trace visibility for development teams.
+</li>
+</ul>
+
+<h3>About the Contributor</h3>
+
+Ivor D'Souza is a Software Engineering masters student at the University of Limerick. His passion for DevOps, Data Engineering and Open Source technologies led him to contribute to AMRIT. With experience at Juspay and expertise in developing monitoring and logging solutions, Ivor is dedicated to improving healthcare accessibility.
+
+<h3>Conclusion</h3>
+
+The deployment of the ELK stack for monitoring on the AMRIT platform marks a pivotal step in enhancing operational efficiency and reliability. By automating log retention, centralizing data collection, and simplifying access to critical insights, we have significantly reduced manual overhead and improved system scalability. This setup not only ensures seamless monitoring across distributed servers but also empowers our teams to proactively address issues, contributing to the platform's stability and performance. It demonstrates how thoughtful integration of technology can drive meaningful impact, enabling better service delivery at scale.
+
+
+
+
+
+
+
+
