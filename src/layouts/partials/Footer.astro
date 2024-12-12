@@ -6,7 +6,7 @@ import menu from "@/config/menu.json";
 import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
 const { footer } = menu;
-const { copyright, location, email, phone, footer_description } = config.params;
+const { copyright, location, email, phone, footer_description, credits } = config.params;
 ---
 
 <footer class="footer bg-white">
@@ -60,6 +60,10 @@ const { copyright, location, email, phone, footer_description } = config.params;
       class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
     >
       <p class="content text-text" set:html={markdownify(copyright)} />
+      <div class="my-4">
+        <a href={`${credits}`} class="underline">Made by ❤️ Amrit Community</a>
+      </div>
     </div>
+    
   </div>
 </footer>
