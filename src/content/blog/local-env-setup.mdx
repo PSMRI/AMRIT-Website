@@ -1,0 +1,74 @@
+---
+title: Setting up the Comprehensive Local Development Environment for AMRIT
+subtitle: Streamlining AMRIT's development setup with Docker
+image: "/images/posts/local-env-setup.jpeg"
+author: Hemanth Kumar Reddy
+date: 2025-02-19T10:00:00Z
+categories: ["Dev-Ops"]
+featured: true
+draft: false
+---
+
+<h3>Imagine spending 4–6 hours just setting up a project before you can even start coding. Frustrating, right?</h3>
+<p>That's exactly what developers faced with the AMRIT platform, an open-source healthcare project serving 2.2 crore beneficiaries. But what if I told you that I helped cut this setup time to just minutes? In this blog, I'll take you through my journey of simplifying AMRIT's development setup using Docker, automating data loading, and configuring 14 Microservices and 11 Frontend services. Whether you're an open-source enthusiast or just curious about problem-solving in tech, this story is for you. Let's dive in!</p>
+
+<h3>Introduction</h3>
+<p>The AMRIT platform is a revolutionary open-source project with over 10+ frontend and 14 backend microservices, serving 2.2 crore beneficiaries across India. As an open-source initiative, it relies on contributors to grow and improve. However, the development setup process was time-consuming, taking 4–6 hours, which discouraged many developers from contributing. My role as a Community contributor was to simplify this setup, making it easier for developers to get started.</p>
+
+<h3>About AMRIT</h3>
+<p><strong>AMRIT (Accessible Medical Records via Integrated Technology)</strong> is an open-source platform designed to streamline healthcare services. It provides a unified system for managing medical records, ensuring transparency and accessibility for millions of beneficiaries. The platform's open-source nature encourages collaboration, but the initial setup process has been a significant barrier for developers.</p>
+
+<h3>The Problem: Why Does Setting This Up Feel Like a Full-Time Job?</h3>
+<p>The AMRIT platform consists of <strong>25+ services</strong> (14 backend and 11 frontend), each requiring specific configurations, dependencies, and data loading. Developers had to spend <strong>4–6 hours</strong> setting up the environment, which included:</p>
+<ul>
+<li>Installing software dependencies (MySQL, Redis, MongoDB, etc.)</li>
+<li>Loading dummy data into the databases</li>
+<li>Configuring environment variables for each service</li>
+<li>Managing ports to avoid conflicts</li>
+</ul>
+<p>This time-consuming process reduced the number of contributors, slowing down the platform's growth.</p>
+
+<h3>My Journey: From Confusion to Clarity</h3>
+
+<h4>The First Meeting: A Reality Check!</h4>
+<p>My journey began with a meeting with Mithun, the head of AMRIT, and the senior developers. They explained the challenges with the current setup, and we brainstormed ideas to simplify it. At first, I thought it would be a straightforward task, but Mithun warned me, "It's not straightforward; there may be speed breakers." He was right.</p>
+
+<h4>Setting Up Dependencies: The Easy Part… or So I Thought</h4>
+<p>The first step was setting up the required software dependencies. I used <strong>Docker</strong> to containerize services like MySQL, Redis, and MongoDB. This helped avoid conflicts with local setups, and everything ran smoothly at first.</p>
+
+<h4>Loading Dummy Data: The Unexpected Nightmare</h4>
+<p>Next, I had to load dummy data into the services. This turned out to be harder than I expected. There were <strong>version compatibility issues</strong>, and I spent a whole week debugging. With help from Anil, a senior developer at AMRIT, we fixed the issue by downgrading the software version.</p>
+
+<h4>Debugging a Massive SQL Script: A Horror Story in 800MB</h4>
+<p>After fixing the version issue, I faced another problem — debugging an <strong>800 MB SQL script</strong>. It was huge, and debugging it was a nightmare. Again, Anil helped me out, and after several meetings, we finally loaded the dummy data. But this process took another week.</p>
+
+<h4>Setting Up Backend Services: Me vs. Java</h4>
+<p>With the data loaded, the next step was setting up the <strong>14 backend services</strong> built on <strong>Spring Boot</strong>. I didn't know Java, so this was tough. I spent some time learning the basics of Spring Boot and got help from Ravi, another senior developer at AMRIT. I managed to set up the main service, but it threw errors, and fixing them took another week.</p>
+
+<h4>Configuring Frontend Services: The Final Stretch</h4>
+<p>Once the backend services were running, I moved on to the <strong>11 frontend services</strong>. Each frontend service needed to be configured with the updated backend ports. This way, developers could clone the repository, run the services, and start contributing without wasting time on setup. I tested each service thoroughly, logging in and checking for errors.</p>
+
+<h3>Technical Implementations: Quick Wins That Took Weeks!</h3>
+<p>Here's a quick look at the technical work I did:</p>
+<ul>
+<li><strong>Containerized MySQL, Redis, and MongoDB using Docker:</strong> This isolated the services, preventing conflicts with local setups and ensuring smooth operation.</li>
+<li><strong>Automated dummy data loading:</strong> Optimized SQL scripts and resolved version compatibility issues to load data efficiently.</li>
+<li><strong>Configured environment variables:</strong> Edited <code>.env</code> files for 14 backend and 11 frontend services to ensure seamless communication.</li>
+<li><strong>Assigned unique ports:</strong> Managed port assignments for all services to avoid conflicts during local development.</li>
+</ul>
+
+<h3>Future Improvements: Making It Even Easier</h3>
+<p>While the current setup is much better, there's still room for improvement. The next step is to dockerize the entire cloning and dependency installation process. This would allow developers to run all services within minutes, so they can focus on contributing to the platform and making a difference in the healthcare sector.</p>
+
+<h3>Special Thanks</h3>
+<p>This journey wouldn't have been possible without the help of some amazing people:</p>
+<ul>
+<li><strong>Mithun:</strong> My mentor and the maintainer of AMRIT, who guided me through every step, taking both my silly and complex doubts with the same wavelength — something I found truly impressive.</li>
+<li><strong>Ravi, Anil, and Devika:</strong> The senior developers at AMRIT who were always there to help me when I got stuck.</li>
+<li><strong>Pratham and C4GT:</strong> For giving me this incredible opportunity to contribute to such an impactful project.</li>
+</ul>
+
+<h3>Conclusion</h3>
+<p>With this, I'm signing off from my Docker container (just kidding!). But my journey in open-source doesn't end here. The AMRIT platform is a great example of how collaboration can make a difference, and I'm proud to have been a part of it. If you're thinking of contributing to open-source, don't let self-doubt stop you. Dive in, learn, and make an impact!</p>
+
+<p><strong>Thank you for reading!</strong> If you're interested in contributing to AMRIT, check out the repository and get started today.</p>
