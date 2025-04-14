@@ -1,13 +1,13 @@
 ---
 import config from "@/config/config.json";
 
+const { configKey } = Astro.props;
 const {
-  call_to_action: {
-    title,
-    description,
-    button: { label, link },
-  },
-} = config;
+  title,
+  description,
+  button: { label, link },
+} = config[configKey];
+
 ---
 
 <section class="px-5 py-20 xl:py-[120px]">

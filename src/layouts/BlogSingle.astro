@@ -6,6 +6,7 @@ import { humanize } from "@/lib/utils/textConverter";
 import {
   FaRegClock,
   FaRegFolder,
+  FaRegUserCircle,
 } from "react-icons/fa";
 import { Image } from "astro:assets";
 
@@ -32,6 +33,10 @@ const { Content } = await post.render();
         <div class="mb-5 mt-6 flex items-center space-x-2">
           <ul class="mb-4">
             <li class="mr-4 inline-block">
+              <FaRegUserCircle className={"mr-2 -mt-1 inline-block"} />
+              {humanize(post.data.author)}
+            </li>
+            <li class="mr-4 inline-block">
               <FaRegClock className={"mr-2 -mt-1 inline-block"} />
               {readingTime(post.body)}
             </li>
@@ -45,10 +50,10 @@ const { Content } = await post.render();
         <div class="content">
           <Content />
         </div>
-        {post.data.link && 
+        {post.data.link &&
           <Button href={post.data.link} style={'primary'} children={'Learn more'} rel={'noopener noreferrer'} client:load/>
           }
-        
+
       </div>
     </div>
   </div>

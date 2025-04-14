@@ -4,7 +4,6 @@ import Partners from "@/components/Partners.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/partials/Cta.astro";
-import JoinUs from "@/layouts/partials/JoinUs.astro";
 import { getEntryBySlug } from "astro:content";
 
 const { blog_folder } = config.settings;
@@ -31,5 +30,5 @@ const { knowledge_partners, donors, technical_partners } = partners.data;
       <Partners data={technical_partners} />
     </div>
   </section>
-  <JoinUs />
+  <Cta configKey="partner_cta"/>
 </Base>

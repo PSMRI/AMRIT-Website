@@ -93,7 +93,7 @@ const { title, meta_title, description, image, noindex, canonical } =
 
     <!-- title -->
     <title>
-      {plainify(meta_title ? meta_title : title ? title : config.site.title)}
+      {plainify(meta_title ? `${meta_title} - ${config.site.title}` : title ? `${title} - ${config.site.title}` : config.site.title)}
     </title>
 
     <!-- canonical url -->
@@ -119,7 +119,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       property="og:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title,
+        meta_title ? `${meta_title} - ${config.site.title}` : title ? `${title} - ${config.site.title}` : config.site.title,
       )}
     />
 
@@ -140,7 +140,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta
       name="twitter:title"
       content={plainify(
-        meta_title ? meta_title : title ? title : config.site.title,
+        meta_title ? `${meta_title} - ${config.site.title}` : title ? `${title} - ${config.site.title}` : config.site.title,
       )}
     />
 

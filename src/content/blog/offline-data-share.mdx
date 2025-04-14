@@ -1,28 +1,47 @@
 ---
-title: Enabling Real-Time Offline Data Sharing for Healthcare Workers
+title: Enabling real-time offline data sharing for healthcare workers
 subtitle: Mauris blandit aliquet elit, eget tincidunt nibh dolor sit amet,
 image: "/images/posts/offline-transfer.webp"
-author: AMRIT Team
+author: Ankit Prakash
 date: 2024-10-02T05:00:00Z
 categories: ["Mobile"]
 featured: true
 draft: false
 ---
 
-In the quest to enhance healthcare delivery in India, Piramal Swasthya, through its Digital Bharat Collaborative (DBC), has been at the forefront of innovative solutions aimed at bridging public healthcare gaps. With a presence in 21 states and over 112 million beneficiaries served, the organization's mission aligns with the Government of India's vision for Universal Health Coverage.
+A few months ago, I found myself on a surprising and transformative journey, working on a CI/CD pipeline for AMRIT, a project under the Digital Bharat Collaborative (DBC). This initiative, spearheaded by Piramal Swasthya, strives to provide accessible medical care to millions of underprivileged people across India. Through this experience, I not only contributed to a project with real-world impact but also grew significantly as a developer and as an individual.
 
 <strong>
-<h2>The Challenge</h2>
+  <h2>The AMRIT Project</h2>
 </strong>
 
-Health and Wellness Centre (HWC) Mobile Application was developed to facilitate Comprehensive Primary Health Care (CPHC) services under the Ayushman Bharat Digital Mission (ABDM). However, many HWCs operate in areas with limited or no internet connectivity, presenting significant challenges in data transfer among healthcare workers. When beneficiaries visit these centres, the need for secure, real-time data sharing becomes critical for effective healthcare delivery.
+The AMRIT platform, short for Accessible Medical Records via Integrated Technologies, is an innovative digital public health delivery system serving over 2 crore beneficiaries across India. Deployed on multiple on-premise servers and state data centres, AMRIT ensures timely medical support through critical services like helplines 104 and 1097. The scale and reach of the project were daunting, but its mission—to provide free healthcare to millions—instantly resonated with me.
 
-<strong><h2>The Solution:  Offline Data Sharing</h2></strong>
+At the heart of my task was the development of a CI/CD pipeline to streamline the deployment of microservices for AMRIT. The platform, being deployed across several servers, made manual deployment a slow and cumbersome process, often leading to service downtime during updates. This is where CI/CD was crucial: automating the building, testing, and deployment process to minimize downtime and improve overall development efficiency.
 
-To address this pressing issue, Piramal Swasthya collaborated with Code for Gov Tech for the Dedicated Mentorship Program. After reviewing multiple proposals and conducting interviews, we selected a contributor to help develop a solution that enables data exchange between mobile devices without internet connectivity.
-Over three months, the contributor focused on establishing a robust system for offline data sharing among healthcare workers, ensuring that they could exchange vital information securely and efficiently, even in the absence of an internet connection. The solution enables data transfer between devices, such as registrars, nurses, doctors, and pharmacists, allowing healthcare professionals to work seamlessly regardless of their connectivity status.
+<strong><h2>The Application Process: Battling Self-Doubt</h2></strong>
 
-<h3>Key Features and Implementation:</h3>
+Before joining the project, I was a final-year B.Tech student unsure about my abilities. Like many others, I grappled with imposter syndrome. I doubted whether my skillset was enough to contribute to something of this magnitude. The competition was fierce, and as I browsed through the profiles of other applicants, I found myself questioning my chances of even being considered.
+
+I could apply to multiple projects, but AMRIT was my first choice. Still, I had nearly withdrawn my application, assuming I would be more likely to succeed with other projects. I’m so grateful I didn’t. I learned a critical lesson: never underestimate yourself, and apply to the places that truly excite you, even if you fear rejection. Our mind often builds false narratives that stop us from stepping out of our comfort zone.
+
+To my surprise, I received a call from Dr. Mithun James, the project mentor, asking me to schedule an interview. I was on a train at the time, both shocked and excited, as I hadn't expected to be shortlisted. The interview went well. Dr. Mithun complimented my resume, something I had never experienced before. My internship at IBM, where I worked with Jenkins, gave me a solid foundation that I could lean on during our conversation. A few days later, I was ecstatic to learn that I had been selected for the project.
+
+<strong><h2>A Roller Coaster of Challenges and Growth</h2></strong>
+
+As I dove into the project, I was assigned weekly tasks focused on building and refining the CI/CD pipelines. While I won't go into technical details, as this isn’t a tech blog, I can confidently say that the journey was full of learning opportunities. It was my first experience seeing how things work on such a large scale, and I quickly realized that real-world development is far more complex than any personal project.
+
+The technical challenges were plenty. There were days when I felt completely lost, where one issue was followed by two more. I quickly learned that in software development, most of the effort goes toward testing and ensuring that changes work as intended. Writing code is the easy part; testing and ensuring that everything functions seamlessly is where the real work lies.
+
+Throughout the project, there were moments of self-doubt, when I questioned whether I was good enough. But with every problem solved, my confidence grew. I learned that it's all about persistence and patience. Tackling one issue at a time made me realize that no problem is too big to overcome. By the end of the project, I had successfully built CI/CD pipelines for AMRIT’s sandbox environment, overcoming every challenge along the way
+
+<strong><h2>Reflection: The Reward of Real Impact</h2></strong>
+
+Looking back, I feel immensely fulfilled knowing that my work on AMRIT’s CI/CD pipeline will ultimately contribute to providing critical medical services to millions. It’s a humbling experience to realize that my skills were applied to something with such a broad social impact. I came into this project with a lot of doubt, but I came out of it stronger, both technically and mentally.
+
+The biggest takeaway? Don’t overthink. Just do it. Often, the fears we harbor are rooted in assumptions that are far removed from reality. The key is to trust yourself, take the leap, and push past those doubts. After all, there’s no greater reward than using your skills to make a real difference in the world.
+
+<h3>Key Technical implementation:</h3>
 
 <ul>
   <li>
@@ -38,10 +57,6 @@ Over three months, the contributor focused on establishing a robust system for o
     <strong>Dual Sync Mechanism:</strong> The system supports both up sync (from mobile devices to the AMRIT server) and down sync (updates from the server back to mobile devices), with status flags indicating whether records are synced or pending.
   </li>
 </ul>
-
-<h3>Expected Outcomes</h3>
-
-The implementation of this offline data sharing capability is set to improve healthcare delivery in remote areas significantly. Health workers will be able to share patient information in real-time, ensuring that beneficiaries receive timely and effective care, even in challenging connectivity environments. The solution not only enhances operational efficiency but also fosters better collaboration among healthcare teams.
 
 <h3>About Contributor</h3>
 

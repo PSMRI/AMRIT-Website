@@ -6,40 +6,34 @@ import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
-import type { TIndexData } from "@/types";
 import { getEntryBySlug } from "astro:content";
 
 const { blog_folder } = config.settings;
-const blogIndex = (await getEntryBySlug<any, string>(
-  blog_folder,
-  "-index",
-)) as TIndexData;
+
 const posts = await getSinglePage(blog_folder);
 const sortedPosts = sortByDate(posts);
 const featuredPost = sortedPosts.filter((item) => item.data.featured);
-const recentPost = sortedPosts.filter((item) => !item.data.featured);
 import Community from "@/components/Community.astro"
 
 const communityData = await getEntryBySlug("contributing", "index");
 ---
 
 <Base
-  title={blogIndex.data.title}
-  meta_title={blogIndex.data.meta_title}
-  description={blogIndex.data.description}
-  image={blogIndex.data.image}
+  title={communityData.data.title}
+  description={communityData.data.description}
+  image={communityData.data.image}
 >
   <section class="page-hero pt-16">
     <div class="container">
-      <PageHeader page_data={blogIndex.data} />
+      <PageHeader page_data={communityData.data} />
     </div>
   </section>
-    <Community data={communityData}/>
+  <Community data={communityData}/>
   <section class="section">
     <div class="container">
       <h2 class="h4 mb-4">Community Stories</h2>
       <Blogs posts={featuredPost} />
     </div>
   </section>
-  <Cta />
+  <Cta configKey="call_to_action" />
 </Base>

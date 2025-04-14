@@ -1,7 +1,7 @@
 ---
 banner:
   title: "Accessible Medical Records via Integrated Technologies"
-  content: "Transforming primary healthcare through digital innovation, empowering frontline workers, and ensuring equitable access for all."
+  content: "Transforming primary healthcare through digital innovation by empowering frontline workers and ensuring equitable access for all. Driving Indian public health forward with comprehensive, technology-driven solutions that enhance care delivery, streamline workflows, and ensure secure, seamless access to patient data."
   image: /images/banner.webp
   button:
     label: Download The Theme
@@ -10,8 +10,8 @@ banner:
 
 ##key features
 key_features:
-  title: "Key Features and Unique Solutions of AMRIT"
-  description: Empowering Indian public health with comprehensive, technology-driven solutions that enhance care delivery, streamline workflows, and ensure seamless, secure access to patient data.
+  title: "Key Features of AMRIT"
+  description: 
   feature_list:
     - id: 1
       icon: "FaHandHoldingHeart"  #icon package react-feather-icon [https://feathericons.com/]
@@ -28,7 +28,7 @@ key_features:
     - id: 4
       icon: "FaTowerCell"  #icon package react-feather-icon [https://feathericons.com/]
       title: Offline Functionality
-      content: Both the Health and Wellness Centre (HWC) and Mobile Medical Unit (MMU) applications have offline capabilities, ensuring uninterrupted service in areas with limited connectivity.
+      content: Health and Wellness Centre (HWC), Mobile Medical Unit (MMU) and Frontline worker applications have offline capabilities, ensuring uninterrupted service in areas with limited connectivity.
     - id: 5
       icon: "FaPuzzlePiece"  #icon package react-feather-icon [https://feathericons.com/]
       title: Integrated Point-of-Care Devices
@@ -44,7 +44,7 @@ key_features:
     - id: 8
       icon: "FaLanguage"  #icon package react-feather-icon [https://feathericons.com/]
       title: Multilingual Support
-      content: The platform supports multiple languages to cater to diverse user bases across different regions.
+      content: The platform supports multiple languages, including English, Hindi, Assamese, and Kannada, to cater to diverse user bases across different regions.
     - id: 9
       icon: "FaRegCalendarCheck"  #icon package react-feather-icon [https://feathericons.com/]
       title: Scheduling and Revisit Management

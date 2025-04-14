@@ -28,10 +28,6 @@ counter:
     - name: "Aspirational Districts"
       number: 112
       color: "#FEC163"
-    - name: "Impacting lives"
-      number: 160
-      measurement: M
-      color: "#FEC163"
 
 # Gallery
 gallery:
@@ -70,6 +66,10 @@ members:
   title: Meet our team
   description: Our team consists of experts at the intersection of digital health, public health, technology, and leadership, dedicated to developing innovative and scalable health solutions that align with both national and global health objectives.
   member_list:
+    - name: Anil Kumar Mokirala
+      title: Database Administrator
+      field: Anil is a seasoned Database Administrator with over 15 years of extensive experience, including more than five years dedicated to the healthcare domain. With expertise across multiple database technologies, he leverages his technical skills to drive meaningful change, positively impacting people's lives. Since joining AMRIT in 2020, Anil has been a key contributor to its mission, consistently delivering excellence and innovation in database management. Beyond his professional pursuits, Anil finds joy in traveling, listening to music, and watching movies, which inspire his well-rounded approach to life and work.
+      image: "/images/Team/anil.webp"
     - name: Avinash Sharma
       title: Sr.Appilcation Support
       field: Avinash is a Sr.Application Support Engineer,He finds joy in learning new skills,working closely with development team and having 3+ experience in healthcare. Currently serving as a Sr.Application Support at Piramal Swasthya.
@@ -87,7 +87,7 @@ members:
       title: Senior Project Engineer
       field: Devika embarked on her career journey with AMRIT, where she has spent the last five years working as a Senior Project Engineer at Wipro. As a full stack developer, she has been instrumental in building innovative healthcare solutions. She thrives in AMRIT’s collaborative and forward-thinking environment, which fosters creativity and the development of impactful digital solutions. Passionate about the intersection of technology and healthcare, she enjoys staying at the forefront of new advancements. In her free time, she explores new technologies, listens to music, gardening, and enjoys watching movies.
       image: "/images/Team/devika.webp"
-    - name: Helen Karyamsetty Grace
+    - name: Helen Grace Karyamsetty
       title: Developer
       field: "Helen has been working as a Java full-stack developer at Wipro for the past three years, having embarked on her journey with AMRIT, an organization that envisions healthcare in the digital world on a larger scale and strives to turn this vision into reality. She has a passion for exploring diverse and innovative ideas, continually striving to bring them to fruition. Outside of work, travel, crafting, and prayer bring her peace and fulfillment."
       image: "/images/Team/helen.webp"

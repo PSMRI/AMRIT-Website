@@ -2,7 +2,7 @@
 title: Centralized Logging for AMRIT: Scaling Observability Across a Distributed Infrastructure
 subtitle: Implementing an ELK Stack Logging Strategy for Comprehensive System Monitoring
 image: "/images/posts/elk-stack.webp"
-author: AMRIT Technical Team
+author: Ivor D'Souza
 date: 2024-12-08T10:00:00Z
 categories: ["DevOps", "Logging", "Monitoring"]
 featured: true
@@ -47,31 +47,30 @@ Looking back, I feel contented with the outcome of this project. It reinforced f
 
 <h3>Key Technical Details:</h3>
 <ul>
-<li>
-<strong>ECS Logging Configuration:</strong> 
-Implemented standardized logging across all API services using Elastic Common Schema (ECS) for consistent log formatting.
-</li>
+  <li>
+    <strong>ECS Logging Configuration:</strong>
+    Implemented standardized logging across all API services using Elastic Common Schema (ECS) for consistent log formatting.
+  </li>
 
-<li>
-<strong>Log Collection Infrastructure:</strong> 
-Deployed Filebeat and APM agents to collect logs and traces from distributed servers, enabling comprehensive system monitoring.
-</li>
+  <li>
+    <strong>Log Collection Infrastructure:</strong>
+    Deployed Filebeat and APM agents to collect logs and traces from distributed servers, enabling comprehensive system monitoring.
+  </li>
 
-<li>
-<strong>Source Identification:</strong> 
-The logs and traces were injected with an <i>environment</i> property to precisely identify log sources across multiple server locations.
-</li>
+  <li>
+    <strong>Source Identification:</strong>
+    The logs and traces were injected with an <i>environment</i> property to precisely identify log sources across multiple server locations.
+  </li>
 
-<li>
-<strong>Intelligent Log Management:</strong> 
-Implemented an effective log sharding strategy to optimize index management and improve query efficiency, with a log retention policy for systematic data pruning and storage management.
-</li>
+  <li>
+    <strong>Intelligent Log Management:</strong> 
+    Implemented an effective log sharding strategy to optimize index management and improve query efficiency, with a log retention policy for systematic data pruning and storage management.
+  </li>
 
-
-<li>
-<strong>Secure Access Control:</strong> 
-Role based access control policy controls log and trace visibility for development teams.
-</li>
+  <li>
+    <strong>Secure Access Control:</strong>
+    Role based access control policy controls log and trace visibility for development teams.
+  </li>
 </ul>
 
 <h3>About the Contributor</h3>

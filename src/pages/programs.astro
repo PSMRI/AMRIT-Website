@@ -9,6 +9,7 @@ import type { TIndexData } from "@/types";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import SuccessStories from "@/components/SuccessStories.astro";
 import ProgramMap from "../layouts/function-components/ProgramMap";
+import Cta from "../layouts/partials/Cta.astro";
 const StoryIndex = (await getEntryBySlug<any, string>(
   success_stories,
   "-index",
@@ -60,4 +61,6 @@ const page_data = {
     </div>
 
   </section>
+
+  <Cta configKey="program_cta"/>
 </Base>

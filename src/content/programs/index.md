@@ -39,7 +39,7 @@ approach:
       subtitle: By facilitating rapid diagnostics and immediate identification of high-risk individuals through Health cube, AMRIT protects people from the potential harm of undetected health conditions, ensuring early intervention and appropriate treatment
         
 impact:
-  title: Visualizing Our Impact
+  title: Our Impact
   subtitle: Explore our programs across India with an interactive map that highlights the states where they are active and showcases their impact through detailed numbers.
   deployments:
     STFC:

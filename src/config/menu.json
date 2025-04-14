@@ -9,14 +9,6 @@
       "url": "/about"
     },
     {
-      "name": "Community",
-      "url": "/amrit-community"
-    },
-    {
-      "name":"Programs",
-      "url":"/programs"
-    },
-    {
       "name": "Products",
       "url": "",
       "hasChildren": true,
@@ -38,6 +30,14 @@
           "url": "/products/health-helplines"
         }
       ]
+    },
+    {
+      "name":"Programs",
+      "url":"/programs"
+    },
+    {
+      "name": "Community",
+      "url": "/amrit-community"
     },
     {
       "name": "Partnerships",

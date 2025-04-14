@@ -1,30 +1,47 @@
 ---
+import ProductModules from "@/layouts/function-components/ProductModules";
 const { data } = Astro.props;
-const { contribute,involvement } = data.data;
+const { contribute, involvement } = data.data;
 import { Image } from "astro:assets";
 import * as Icon from "react-icons/fa6";
+
+console.log(involvement)
 ---
-<section>
-  <h2 class="text-center py-8 mt-8">How can you contribute and help community?</h2>
+<section class="section">
   <div class="container">
-    {
-      (
-        <div class="key-feature-grid mt-10 grid grid-cols-1 gap-7 md:grid-cols-3">
-          {involvement.map((item: any) => (
-            item.list.map((content:any) => {
-              const ReactIcon = Icon[content.icon]
-              return (
-                <div class="flex flex-col rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-5 pb-8 text-center items-center justify-center bg-white">
-                  <ReactIcon size={48} class="text-center"/>
-                  <h3 class="h4 text-xl lg:text-2xl p-3">{content.title}</h3>
-                  <p>{content.description}</p>
-                </div>
-              )
-            })
-          ))}
-        </div>
-      )
-    }
+    <div class="row text-center">
+      <h2 class="text-center">How can you contribute and help community?</h2>
+    </div>
+    <div class="row mt-14 text-center">
+      {involvement.list.map((item, i) => {
+        const ReactIcon = Icon[item.icon]
+        return (
+          <div class="mb-10 sm:col-6 lg:col-4 " key={i}>
+            <div class="relative">
+              <svg
+                class={`mx-auto h-[90px] w-[100px]`}
+                style={{
+                  fill: item.color,
+                  opacity: 0.1,
+                }}
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M47.1,-61.5C62.2,-53.9,76.5,-41.7,83.1,-25.9C89.6,-10.2,88.6,9.1,82.4,26.4C76.2,43.6,64.9,58.7,50.4,70.5C35.8,82.2,17.9,90.6,0,90.7C-18,90.7,-35.9,82.4,-48.4,70C-61,57.6,-68.1,41,-73.6,23.9C-79.1,6.9,-83,-10.7,-78.6,-26C-74.3,-41.3,-61.6,-54.3,-47.1,-62.1C-32.6,-70,-16.3,-72.7,-0.1,-72.5C16,-72.3,32,-69.2,47.1,-61.5Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+              <span class="benifit-icon absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[28%]">
+              <ReactIcon color={item.color} size={48} />
+            </span>
+            </div>
+            <h3 class="h4 mb-4 mt-8">{item.title}</h3>
+            <p>{item.content}</p>
+          </div>
+        )
+      })}
+    </div>
   </div>
   <h2 class="text-center py-8 mt-8">Why contribute?</h2>
   <div class="container">
