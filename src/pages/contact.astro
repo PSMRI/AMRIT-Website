@@ -11,6 +11,8 @@ const page_data = {
 };
 let message = "";
 let messageType = "";
+let formUrl = ""
+let fetchResponse = ""
 if (Astro.request.method === "POST") {
   try {
     const formData = await Astro.request.formData();
@@ -20,14 +22,24 @@ if (Astro.request.method === "POST") {
       body: formData,
     });
 
-    const data = await response.json();
-    if (response.status === 200) {
-      message = data.message;
-      messageType = "success"; // Success
-    } else {
-      message = "Something went wrong. Please try again.";
-      messageType = "error"; // Failure
+    formUrl = `${url}/api/sendEmail`
+
+    const clonedResponse = response.clone();
+    try {
+      const data = await response.json();
+      if (response.status === 200) {
+        message = data.message;
+        messageType = "success"; // Success
+      } else {
+        message = "Something went wrong. Please try again.";
+        messageType = "error"; // Failure
+      }
+    } catch (e) {
+      message = "JSON parsing error";
+      messageType = "error";
+      fetchResponse = await clonedResponse.text();
     }
+
   } catch (error) {
     if (error instanceof Error) {
       message = `Error: ${error.message}`;
@@ -54,6 +66,8 @@ if (Astro.request.method === "POST") {
           {message && (
             <div class={`message ${messageType === 'success' ? 'success' : 'error'}`}>
               <p>{message}</p>
+              <p>{formUrl}</p>
+              <p>{fetchResponse}</p>
             </div>
           )}
           <form
