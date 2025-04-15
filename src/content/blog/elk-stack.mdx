@@ -1,5 +1,5 @@
 ---
-title: Centralized logging solution for AMRIT's distributed infrastructure
+title: Centralized Logging for AMRIT: Scaling Observability Across a Distributed Infrastructure
 subtitle: Implementing an ELK Stack Logging Strategy for Comprehensive System Monitoring
 image: "/images/posts/elk-stack.webp"
 author: Ivor D'Souza
@@ -9,20 +9,47 @@ featured: true
 draft: false
 ---
 
-<strong>
-<h2>Challenge: Distributed Logging Complexity</h2>
-</strong>
-
-AMRIT's infrastructure—spread across multiple servers located nationwide—presented significant logging and monitoring challenges. With servers dispersed across the country, tracking system performance, identifying issues, and maintaining comprehensive system visibility became increasingly complex. The need for a centralized, effective logging solution became paramount to ensure system reliability and quick troubleshooting.
+Recently I had the opportunity to contribute to the AMRIT platform through the C4GT Community initiative, working on a mission-critical challenge: centralizing monitoring for their distributed services. With servers deployed nationwide, AMRIT faced significant observability hurdles — and designing a solution to tackle that was both technically rewarding and personally enriching. This open-source engagement pushed me to think holistically about system design, reliability, and the human side of infrastructure.
 
 <strong>
-<h2>Solution: ELK Stack Logging Infrastructure</h2>
+<h2>Getting Started: From GitHub Issue to Kickoff Call</h2>
 </strong>
 
-Over the course of implementing the logging strategy, we successfully developed a comprehensive centralized logging solution using the ELK stack. This solution included:
+I came across the opportunity through the C4GT community and applied via a GitHub issue that outlined the project goals. Having recently completed a project involving Elasticsearch, I felt confident that my skills aligned well with the challenge. I was thrilled when, a couple of weeks later, I received an email saying I had been selected.
 
-<h3>Key Objectives:</h3>
+What truly drew me to this project wasn’t just the technical stack — it was the mission behind it. AMRIT, supported by the team at PSMRI, is driven by a powerful vision: that digital health solutions should be accessible to everyone. As someone who deeply believes in the power of open-source technology to bridge systemic gaps, this principle deeply resonated with me. The idea that my contributions could help make public health systems more transparent and responsive — especially for underserved communities — made the work feel incredibly meaningful from day one.
 
+We kicked things off with an introductory call with the team at PSMRI, where I was introduced to the system’s architecture and the project’s core objectives. It became clear that this wasn’t just about setting up a logging pipeline — it was about designing a solution that could scale, adapt, and ultimately support better healthcare outcomes through improved visibility and observability.
+
+<strong>
+<h2>Diving In: Understanding the Landscape</h2>
+</strong>
+
+Once onboarded, I began by familiarizing myself with AMRIT’s ecosystem consisting of over 20 interdependent services, each playing a critical role in delivering healthcare functionality. It was a lot to absorb, but the complexity also made it exciting.
+
+To get hands-on, I set up a reproducible local environment using Docker. This helped me simulate the distributed system in a controlled setup, allowing for rapid experimentation without impacting production.
+
+
+<strong>
+<h2>Facing Complexity, One Step at a Time</h2>
+</strong>
+
+As I delved deeper into the project, understanding how the monitoring system would integrate with the existing API services wasn’t straightforward. Rather than trying to solve everything at once, I focused on building the system incrementally — making sure each part worked well before moving on to the next. It felt a lot like piecing together a giant puzzle, one that demanded both patience and curiosity.
+
+There were plenty of challenges along the way, but what consistently helped was taking the time to build a solid mental model of the system. That clarity gave me the confidence to dig deeper, investigate issues thoroughly, and address problems at their root — not just apply temporary fixes.
+
+<strong>
+<h2>The Outcome: A Scalable Solution with Real Impact</h2>
+</strong>
+
+As the project came to a close, the results were clear. The centralized logging solution we implemented greatly improved how the team at AMRIT could track system performance and troubleshoot issues across their services. What once took a lot of manual effort to set up and maintain was now streamlined and automated, saving time and reducing the potential for errors.
+
+Once all the services were integrated with the logging solution, we were able to find a call spanning multiple services that took too long to complete - something that would have gone unnoticed if we saw it in isolation.
+
+Looking back, I feel contented with the outcome of this project. It reinforced for me the importance of thoughtful, purpose-driven work. It wasn’t just about solving a technical problem — it was about contributing to a larger mission that could positively impact people's lives.
+
+
+<h3>Key Technical Details:</h3>
 <ul>
   <li>
     <strong>ECS Logging Configuration:</strong>
@@ -40,23 +67,8 @@ Over the course of implementing the logging strategy, we successfully developed 
   </li>
 
   <li>
-    <strong>Intelligent Log Management:</strong>
+    <strong>Intelligent Log Management:</strong> 
     Implemented an effective log sharding strategy to optimize index management and improve query efficiency, with a log retention policy for systematic data pruning and storage management.
-  </li>
-</ul>
-
-<h3>Expected Outcomes:</h3>
-The implementation of the centralized ELK stack logging solution for AMRIT is expected to have the following outcomes:
-
-<ul>
-  <li>
-    <strong>Enhanced Visibility:</strong>
-    Provide a single, comprehensive view of logs across distributed services, enabling rapid issue identification and resolution.
-  </li>
-
-  <li>
-    <strong>Improved System Reliability:</strong>
-    Enable faster troubleshooting and performance monitoring across AMRIT's nationwide server network, with APM traces providing deep insights into query performance, latency metrics, error tracking, and application bottlenecks.
   </li>
 
   <li>
@@ -71,7 +83,7 @@ Ivor D'Souza is a Software Engineering masters student at the University of Lime
 
 <h3>Conclusion</h3>
 
-The deployment of the ELK stack for monitoring on the AMRIT platform marks a pivotal step in enhancing operational efficiency and reliability. By automating log retention, centralizing data collection, and simplifying access to critical insights, we have significantly reduced manual overhead and improved system scalability. This setup not only ensures seamless monitoring across distributed servers but also empowers our teams to proactively address issues, contributing to the platform's stability and performance. It demonstrates how thoughtful integration of technology can drive meaningful impact, enabling better service delivery at scale.
+The deployment of the ELK stack for monitoring on the AMRIT platform marks a pivotal step in enhancing operational visibility and reliability. By automating log retention, centralizing data collection, and simplifying access to critical insights, we have significantly reduced manual overhead and improved system scalability. This setup not only ensures seamless monitoring across distributed servers but also empowers our teams to proactively address issues, contributing to the platform's stability and performance. It demonstrates how thoughtful integration of technology can drive meaningful impact, enabling better service delivery at scale.
 
 
 
