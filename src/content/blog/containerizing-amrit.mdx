@@ -1,0 +1,180 @@
+---
+title: "Containerizing AMRIT: Modernizing Healthcare Delivery Through Microservices Architecture"
+subtitle: "A technical journey of containerizing India's healthcare platform"
+date: 2025-06-21T19:30:00Z
+author: "Suraj"
+categories: ["DevOps"]
+tags: ["Docker", "Containerization", "Spring Boot", "Angular"]
+featured: true
+draft: false
+---
+
+## The Beginning: Taking on the Challenge
+
+When I first looked at the GitHub issue [#59](https://github.com/PSMRI/AMRIT/issues/59) for dockerizing the AMRIT platform, I knew I was in for an exciting challenge. AMRIT, serving millions of beneficiaries across India, needed to transition from a traditional deployment model to a containerized architecture. The task? Containerize 15 Spring Boot microservices, serve 10 Angular applications, and orchestrate everything with proper networking and security - all deployable via a single Docker Compose command. No pressure, right?
+
+## Understanding the Scale: Numbers That Made Me Think Twice
+
+The sheer scale of AMRIT was impressive:
+
+- 15 Spring Boot APIs powering critical healthcare services
+- 10 Angular frontends serving different user interfaces
+- 3 crucial databases (MySQL, MongoDB, Redis)
+- Countless environment variables and service dependencies
+- Millions of healthcare records flowing through the system
+
+## The First Steps: Planning the Architecture
+
+My first meeting with Mithun sir over Microsoft Teams was eye-opening. "This isn't just about putting services in containers," he explained. "It's about creating a robust, production-ready system that others can easily deploy." He was right - this required careful planning.
+
+![Architecture Workflow of Dockerized AMRIT Platform](/public/images/dockerizing-amrit-platform-architecture.png)
+
+The architecture diagram above illustrates the containerized AMRIT platform's workflow. Let me break it down:
+
+- **Public Zone**: The entry point where users interact with the system through web browsers, connecting via HTTPS to our Nginx reverse proxy.
+  
+- **Nginx Layer**: Acts as the gateway, handling all incoming traffic and routing requests to appropriate services based on URL paths (like /admin-api, /identity-api, /hwc, etc.).
+
+- **Private Zone**: Contains two main component groups:
+  - **API Layer**: Houses our Spring Boot microservices (Identity API, Admin API, Common API, etc.)
+  - **UI Applications**: Contains our Angular frontends (HWC UI, Inventory UI, Admin UI, etc.)
+
+- **Database Layer**: Manages data persistence through:
+  - **MySQL**: Handles relational data (user data, admin data)
+  - **MongoDB**: Manages document-based data (app data, other data)
+
+This architecture ensures proper isolation between services while maintaining secure and efficient communication paths throughout the system.
+
+I spent the first week:
+
+- Analyzing service dependencies
+- Mapping data flows
+- Planning network isolation
+- Designing the Nginx routing strategy
+- After discussion, we finalized that the UI applications will be built separately and their static files will be copied into the NGINX container through the Dockerfile. 
+- Identified the necessary steps for dockerizing the API applications.
+
+## The Technical Journey: One Container at a Time
+
+### Phase 1: API Services - The Backend Battalion
+
+First challenge: containerizing 15 Spring Boot services. Each service had its own personality:
+
+- Identity API - the gatekeeper
+- Admin API - the controller
+- HWC API - the healthcare wizard
+- And many more...
+
+The challenge? Making them talk to each other while maintaining isolation. Through Discord discussions with senior DevOps engineers, I learned the art of container networking and health checks.
+
+### Phase 2: Frontend Services - The Nginx Chronicles
+
+This was interesting. Instead of containerizing each UI application separately, I took a different approach:
+
+- Created build scripts for all Angular applications
+- Mounted all UI builds directly into Nginx
+- Configured path-based routing
+- Set up reverse proxy for API communication
+
+The result? A lightweight, efficient setup that served all 10 UIs through a single Nginx container.
+
+### Phase 3: Infrastructure Setup
+
+With the applications containerized, next came setting up the core infrastructure. I created a `docker-compose.infra.yml` with:
+
+- MySQL 8.0 for relational data
+- MongoDB 6.0 for document storage
+- Redis 7.2.4 for caching
+
+Each database needed proper initialization scripts and volume management. The satisfaction of seeing all services running together - APIs, UIs, and databases - was worth the initial struggles with version compatibility.
+
+## Challenges That Kept Me Awake
+
+### The Environment Variable Saga
+
+Managing environment variables for all API services was like solving a complex puzzle. The solution? Creating a comprehensive `.env.example` template file that documented all necessary environment variables, making it easier for future contributors to set up their own `.env` file with proper configurations.
+
+### The Database Dance
+
+Getting three different databases to play nice together was tricky. Each needed:
+
+- Proper initialization scripts
+- Volume management
+- Backup strategies
+- Health monitoring
+
+### The Network Symphony
+
+Creating isolated networks while ensuring services could still communicate was a balancing act. The solution involved careful planning of:
+
+- Network segmentation
+- Service discovery
+- Port management
+
+## Moments of Truth
+
+1. **The First Integration Test**
+   When all services started successfully for the first time, it felt like landing a spacecraft on the moon. Small step for containers, giant leap for AMRIT!
+
+2. **The Performance Test**
+   Seeing the system handle requests efficiently across all services validated our architectural decisions. The containerized setup proved its worth with all services restarting in just ~30-90 seconds.
+
+3. **The Documentation Day**
+   Creating clear documentation for future contributors felt like passing on the torch.
+
+## What I Learned
+
+This journey taught me more than just Docker commands:
+
+1. The importance of planning before coding
+2. The art of service orchestration
+3. The value of community collaboration
+4. The impact of healthcare technology
+
+Here are some key experiences that shaped my journey:
+
+1. **The Multi-Stage Dockerfile Challenge**: One of the biggest technical challenges was optimizing the build process for both UI and API services. I implemented multi-stage Dockerfiles that reduced image sizes by up to 60% while maintaining all functionality. This was crucial for resource efficiency in production.
+
+2. **The Nginx Configuration Pivot**: Initially, I planned to containerize each UI application separately, but after analyzing the resource overhead, I pivoted to serving all UI applications through a single Nginx container. This decision significantly reduced complexity and improved performance.
+
+3. **The Power of Community**: A game-changing interaction happened during a Discord discussion about health checks. A senior DevOps engineer suggested implementing custom health check endpoints, which became crucial for our container orchestration reliability.
+
+## The Impact
+
+The result of this long journey?
+
+- A fully containerized AMRIT platform
+- Easy deployment process
+- Consistent environments
+- Scalable architecture
+- Better resource utilization
+
+But more importantly, it made AMRIT more accessible to developers who want to contribute to India's healthcare technology.
+
+## Special Thanks
+
+This journey wouldn't have been possible without the help of some amazing people:
+
+**Mithun**: The maintainer of AMRIT, who assigned me this challenging issue. Through multiple meetings, he helped me understand the AMRIT platform's architecture deeply, guided me through infrastructure decisions, and shared valuable insights about how this containerization effort would streamline their deployment process. His patience in addressing all my questions and clear vision for the platform's future were invaluable.
+
+**PSMRI and C4GT**: For providing this incredible opportunity to contribute to a healthcare project that impacts millions of lives across India. The experience of working on such a large-scale, meaningful project has been truly enriching.
+
+## Conclusion
+
+This wasn't just about containerizing services - it was about making healthcare technology more accessible and deployable. Every container spun up, every network configured, and every service dockerized brings us closer to better healthcare delivery.
+
+Here's what I learned from this transformative experience:
+
+1. **Most Rewarding Aspect**: Seeing the entire platform start up with a single command was incredibly satisfying, but knowing that this work would make it easier for future contributors to join and enhance AMRIT's healthcare mission was the true reward.
+
+2. **Personal Growth**: This project transformed me from a developer who could use Docker to a DevOps engineer who understands the intricacies of container orchestration, networking, and scalable architecture. The complexity of healthcare systems added an extra dimension to my technical growth.
+
+3. **Advice for Future Contributors**: 
+   - Start with understanding the big picture before diving into individual services
+   - Document everything, especially environment configurations
+   - Don't hesitate to question existing approaches if you see room for improvement
+   - Remember that every optimization you make impacts healthcare delivery for millions
+
+---
+
+*This documentation is more than just a technical guide, it's a story of transformation, both for AMRIT and for me, as a DevOps engineer and open-source contributor.*
