@@ -36,20 +36,15 @@ We couldn't answer questions like:
 Our tools told us if servers were running not **how** people used them.  
 And in public health, that's not a UX issue; it's a **bottleneck that can slow down patient care**.
 
-My goal was simple yet crucial **light up that black box**.
-
-![AMRIT GitHub Overview Screenshot](/images/posts/amrit-repo.png)
-*AMRIT's open-source ecosystem a **nationwide digital health platform** with multiple UIs and APIs powering healthcare delivery across India.*
-
 ---
 
 ## The Challenge: Why Analytics in Healthcare Is Hard (and Why We Chose Matomo)
 
-My first thought was **why not just use Google Analytics?**  
-But **healthcare data is sensitive**, and every click could carry **confidential context**. Sending that to **third-party tools was not an option**.
+We needed an analytics solution that **didn’t rely on any third-party services** and could be **fully self-hosted** within AMRIT’s infrastructure — which made Matomo the ideal choice.
+
 
 That's when my mentor introduced me to **Matomo**, an **open-source, self-hosted analytics platform**.  
-Unlike others, Matomo gives **full data ownership** **nothing leaves your server**.
+Unlike others, Matomo gives **full ownership**.
 
 It was the right fit for AMRIT, but it came with **challenges**:
 - **Hosting and maintaining the full stack** (NGINX, PHP, MySQL)
@@ -75,8 +70,8 @@ We started with **two key principles**:
 
 #### 🔹 The Server Architecture: Privacy by Design
 
-You can't just expose a Matomo server to the public internet that's a **security risk**.  
-So, we built a **multi-layered architecture** that kept everything behind **secure boundaries**:
+While the Matomo dashboard is accessible through a DNS endpoint for convenience, all analytics data is securely stored on a **private internal server**.  
+This ensures that no sensitive information is exposed publicly, maintaining full control over user analytics within AMRIT’s infrastructure.
 
 - **Public IP & DNS:** Requests first hit a **single public gateway**.  
 - **NGINX Gateway:** Routes traffic **securely**.  
@@ -166,8 +161,3 @@ Watching **live, privacy-safe data flow securely** from healthcare workers into 
 I'm deeply thankful to **Piramal Swasthya Management and Research Institute (PSMRI)** and the **Code for GovTech (C4GT)** program for this opportunity.
 
 Special thanks to my mentor, **Dr. Mithun James (@drtechie)**, for his **constant guidance**, and to the entire **AMRIT team** for their **collaboration and support**.
-
----
-
-![C4GT Certificate](/images/posts/abhijeet-c4gt-certificate.jpg)
-*Wrapping up my **C4GT 2025 journey** with gratitude and pride a summer of **learning, building, and real impact**. ❤️*
