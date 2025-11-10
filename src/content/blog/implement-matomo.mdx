@@ -1,0 +1,173 @@
+---
+title: "Lighting Up the Black Box: Implementing Privacy-First User Analytics in AMRIT (My C4GT 2025 Experience)"
+author: "Abhijeet Waghmare"
+date: 2025-11-08
+categories: ["Frontend", "Analytics"]
+image: "/images/posts/matomo-banner.png"
+draft: false
+featured: true
+---
+
+This blog shares my experience with **Code for GovTech (C4GT)** the **journey**, the **challenges**, and the **lessons I learned** while building something that impacts real people. ✨
+
+---
+
+## About Me
+I'm **Abhijeet Waghmare**, a **pre-final-year student** at the **Indian Institute of Information Technology, Design and Manufacturing, Jabalpur (IIITDMJ)**.  
+During **C4GT 2025**, I got the incredible opportunity to work with **Piramal Swasthya Management and Research Institute (PSMRI)** on a project that combined **engineering and public health**.
+
+---
+
+## Setting the Stage: Lighting Up the Black Box
+
+When I joined C4GT, I was assigned to a project titled **"Implement User Analytics with Matomo in AMRIT."**  
+Then I saw AMRIT and realized this wasn't just another web app.
+
+**AMRIT (Accessible Medical Records via Integrated Technologies)** is a **massive, open-source digital public good** with **10+ UIs and 15 APIs**, serving **thousands of healthcare workers** and **millions of beneficiaries** across India.
+
+But it had one big problem a **black box**.
+
+Despite its scale, AMRIT **lacked analytics**. We had **no user insights**, **no visibility** into how real users interacted with the system.
+
+We couldn't answer questions like:
+- **"Which features do healthcare workers use most?"**
+- **"Where do users struggle in their workflow?"**
+
+Our tools told us if servers were running not **how** people used them.  
+And in public health, that's not a UX issue; it's a **bottleneck that can slow down patient care**.
+
+My goal was simple yet crucial **light up that black box**.
+
+![AMRIT GitHub Overview Screenshot](/images/posts/amrit-repo.png)
+*AMRIT's open-source ecosystem a **nationwide digital health platform** with multiple UIs and APIs powering healthcare delivery across India.*
+
+---
+
+## The Challenge: Why Analytics in Healthcare Is Hard (and Why We Chose Matomo)
+
+My first thought was **why not just use Google Analytics?**  
+But **healthcare data is sensitive**, and every click could carry **confidential context**. Sending that to **third-party tools was not an option**.
+
+That's when my mentor introduced me to **Matomo**, an **open-source, self-hosted analytics platform**.  
+Unlike others, Matomo gives **full data ownership** **nothing leaves your server**.
+
+It was the right fit for AMRIT, but it came with **challenges**:
+- **Hosting and maintaining the full stack** (NGINX, PHP, MySQL)
+- **Ensuring data security and isolation**
+- **Integrating tracking across multiple Angular UIs**
+
+So, instead of dropping in a script, we built the **entire analytics pipeline from scratch**.
+
+![Matomo Overview Screenshot](/images/posts/matomo.png)
+*Matomo's **privacy-first approach** keeping all analytics data secure and self-hosted for complete control.*
+
+---
+
+## Designing the Architecture: Building for Scale and Privacy
+
+Once we decided to go with Matomo, the real challenge began **how do we host and integrate it securely** across multiple micro frontends without breaking anything?
+
+We started with **two key principles**:
+1. **Security first:** No external exposure of sensitive analytics data.  
+2. **Scalability:** Every AMRIT module should use the same analytics layer without rewriting code.
+
+---
+
+#### 🔹 The Server Architecture: Privacy by Design
+
+You can't just expose a Matomo server to the public internet that's a **security risk**.  
+So, we built a **multi-layered architecture** that kept everything behind **secure boundaries**:
+
+- **Public IP & DNS:** Requests first hit a **single public gateway**.  
+- **NGINX Gateway:** Routes traffic **securely**.  
+- **Reverse Proxy:** Forwards Matomo requests through a **private tunnel**.  
+- **Private Server:** Hosts Matomo (NGINX + PHP-FPM + MySQL), **fully isolated**.
+
+This setup ensured that analytics data stayed **private, secure, and fast**.
+
+![Matomo Server Architecture Diagram](/images/posts/server-architecture.png)
+*A **secure multi-layered setup** using NGINX and reverse proxy keeps Matomo isolated, private, and under full control.*
+
+---
+
+#### 🔹 The Client Architecture: One Service to Track Them All
+
+The next challenge was on the frontend.  
+AMRIT isn't a single app it's a **network of Angular-based UIs**.  
+Adding tracking code manually to each one would've been a **nightmare**.
+
+So, I built a **reusable TrackingService** inside the **Common-UI module**, which every AMRIT UI depends on.
+
+Now, instead of adding tracking code everywhere, developers can just call **one function**:
+
+```ts
+this.trackingService.trackEvent('category', 'action', 'label');
+```
+Behind the scenes, it manages **sessions, user IDs, and backend communication automatically**.  
+This design also makes it **future-ready** if AMRIT ever adds another analytics tool, it'll work seamlessly.
+
+![Tracking Service Workflow Diagram](/images/posts/matomo-architecture.png)
+*A **single reusable TrackingService** now powers analytics across all AMRIT UIs making event tracking simple, consistent, and extendable.*
+
+---
+
+## Building the System: My 3 Months of Implementation
+
+**Phase 1: Foundation (June)**  
+Explored AMRIT's architecture, set up Matomo locally, and built the **first version of the Tracking Service**.  
+It took several iterations, but with my mentor's guidance, the **foundation was ready**.
+
+**Phase 2: Integration (July)**  
+Integrated tracking into **HWC-UI** and **Inventory-UI**, set up an **NGINX reverse proxy with SSL**, and deployed Matomo on a **private server**.  
+Seeing the **first real-time event** appear on the dashboard felt **magical** ✨
+
+**Phase 3: Expansion (August)**  
+Added **user-level tracking**, integrated it into **MMU-UI** and **ECD-UI**, and built **custom dashboards** for insights.  
+Finally, I documented everything from **setup steps to event tracking guidelines**.
+
+![PR List Screenshot](/images/posts/pull-requests.png)
+*Pull requests merged across **multiple AMRIT UIs** marking the **full rollout** of Matomo-based analytics across the platform.*
+
+---
+
+## Lighting Up the Black Box: The Impact & Outcomes
+
+After weeks of setup and integration, we finally had **Matomo running across major AMRIT modules** **HWC-UI, Inventory-UI, MMU-UI, and ECD-UI**.  
+For the first time, the team could actually **see what was happening inside the platform**.
+
+It felt like **turning the lights on in a dark room**.  
+We visualized **real-time interactions**, identified **popular features**, and spotted **workflow drop-offs**.  
+To make insights actionable, we defined **Key Performance Indicators (KPIs)** tracking **engagement, performance, and accessibility** across modules.
+
+![KPI Table Image](/images/posts/kpis.png)
+*A snapshot of AMRIT's **analytics KPIs** tracking engagement, performance, and accessibility metrics that guide **continuous improvement**.*
+
+With Matomo in place, AMRIT shifted from **guesswork to data-driven decisions**.  
+The setup remains **fully private, secure, and future-ready** new modules can integrate analytics **effortlessly** as the platform grows.
+
+![Matomo Dashboard Screenshot](/images/posts/matomo-dashboard.png)
+*Custom dashboards in Matomo turning **user activity into actionable insights** helping the AMRIT team improve workflows and user experience in **real time**.*
+
+By the end, the black box was gone replaced by a **clear, measurable, and privacy-first analytics system** that helps AMRIT continuously improve **healthcare experiences across India**.
+
+---
+
+## Learnings, Reflections, and Gratitude
+
+This project was more than just integrating analytics it was a **crash course in scale, security, and impact**.
+
+I learned to design **reusable systems** across multiple Angular apps, set up **secure servers**, and appreciate how **small architectural decisions early on** save **hundreds of hours later**.  
+Working across repositories taught me the importance of **documentation, teamwork, and mentorship**.
+
+Regular syncs with my mentor and the AMRIT team helped me grow as an **engineer and collaborator**.  
+Most importantly, I realized that **great engineering isn't just about code it's about solving real problems for real people**.
+
+Watching **live, privacy-safe data flow securely** from healthcare workers into dashboards was **incredibly fulfilling**.  
+I'm deeply thankful to **Piramal Swasthya Management and Research Institute (PSMRI)** and the **Code for GovTech (C4GT)** program for this opportunity.
+
+Special thanks to my mentor, **Dr. Mithun James (@drtechie)**, for his **constant guidance**, and to the entire **AMRIT team** for their **collaboration and support**.
+
+---
+
+![C4GT Certificate](/images/posts/abhijeet-c4gt-certificate.jpg)
+*Wrapping up my **C4GT 2025 journey** with gratitude and pride a summer of **learning, building, and real impact**. ❤️*
