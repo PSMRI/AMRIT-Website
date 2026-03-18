@@ -10,14 +10,25 @@ import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import taxonomyFilter from "@/lib/utils/taxonomyFilter";
 import { slugify, humanize } from "@/lib/utils/textConverter";
 
-const categories = await getTaxonomy(config.settings.blog_folder, "categories");
+const categories = [
+  ...new Set(
+    // Normalize category labels before route generation so content variants
+    // like "DevOps" and "Dev-Ops" collapse into a single category page.
+    (await getTaxonomy(config.settings.blog_folder, "categories")).map((value) =>
+      slugify(value?.replace(/-/g, "").toLowerCase()),
+    ),
+  ),
+];
 export async function getStaticPaths() {
-  const categories = await getTaxonomy(
-    config.settings.blog_folder,
-    "categories",
-  );
+  const categories = [
+    ...new Set(
+      (await getTaxonomy(config.settings.blog_folder, "categories")).map(
+        (value) => slugify(value?.replace(/-/g, "").toLowerCase()),
+      ),
+    ),
+  ];
   return categories.map((item) => {
-    const category = slugify(item);
+    const category = item;
     return {
       params: { category },
       props: {
